@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Trama — La Cour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root { --blk:#070202; --drk:#110404; --drk2:#1b0606; --red:#8b1a1a; --red2:#6b1010; --gld:#c9a97a; --crm:#f4ede0; --crm2:#ece4d4; --txt:#1c0a0a; --mut:#5c3030; }
+    body { background:var(--blk); color:var(--crm); font-family:'Cormorant Garamond',Georgia,serif; font-size:18px; line-height:1.75; overflow-x:hidden; }
+    ::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:var(--blk)} ::-webkit-scrollbar-thumb{background:var(--red2)}
+    a { color:inherit; text-decoration:none; }
+
+    /* NAV */
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 56px; height:64px; background:linear-gradient(to bottom, rgba(7,2,2,.97) 60%, transparent); }
+    .nav-logo { font-family:'Playfair Display',Georgia,serif; font-size:14px; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:var(--crm); }
+    .nav-logo em { font-style:normal; color:var(--red); }
+    nav ul { list-style:none; display:flex; gap:28px; }
+    nav ul a { font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(244,237,224,.4); transition:color .3s; }
+    nav ul a:hover, nav ul a.on { color:var(--crm); }
+
+    /* HERO */
+    #ph { padding:160px 56px 80px; text-align:center; position:relative; overflow:hidden; }
+    #ph::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center bottom, rgba(139,26,26,.1) 0%, transparent 70%); }
+    .lbl { font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:4px; text-transform:uppercase; color:var(--red); display:block; }
+    .h1 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(42px,7vw,80px); font-weight:900; text-transform:uppercase; letter-spacing:3px; color:var(--crm); margin-top:10px; }
+    .h1-sub { font-family:'Cormorant Garamond',Georgia,serif; font-size:16px; font-style:italic; color:rgba(244,237,224,.32); margin-top:14px; letter-spacing:1px; }
+
+    /* ESTADO ATUAL */
+    #estado { background:var(--crm); padding:64px 56px; }
+    .estado-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; max-width:1140px; margin:32px auto 0; }
+    .estado-card { background:var(--crm2); padding:28px 24px; border-top:2px solid rgba(139,26,26,.15); }
+    .estado-card.ativo { border-top-color:var(--red); }
+    .estado-lbl { font-family:'Montserrat',sans-serif; font-size:7px; letter-spacing:3px; text-transform:uppercase; color:var(--red); display:block; margin-bottom:10px; }
+    .estado-titulo { font-family:'Playfair Display',Georgia,serif; font-size:16px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--txt); margin-bottom:12px; }
+    .estado-vazio { font-family:'Cormorant Garamond',Georgia,serif; font-size:15px; font-style:italic; color:rgba(28,10,10,.28); line-height:1.6; }
+    .estado-texto { font-family:'Montserrat',sans-serif; font-size:10px; color:var(--mut); line-height:1.65; }
+
+    /* SEÇÃO TÍTULO */
+    .sec-head { max-width:1140px; margin:0 auto; padding:72px 56px 0; }
+    .sec-head-lbl { font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:4px; text-transform:uppercase; color:var(--red); display:block; margin-bottom:8px; }
+    .sec-head-h { font-family:'Playfair Display',Georgia,serif; font-size:clamp(22px,3vw,34px); font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--crm); }
+    .sec-rule { max-width:1140px; margin:20px 56px 0; height:1px; background:linear-gradient(to right, rgba(139,26,26,.35), transparent); }
+
+    /* SESSÕES */
+    #sessoes { padding:0 56px 80px; max-width:1140px; margin:0 auto; }
+    .sessao { border-bottom:1px solid rgba(139,26,26,.1); padding:40px 0; display:grid; grid-template-columns:120px 1fr; gap:40px; align-items:start; }
+    .sessao:last-child { border-bottom:none; }
+    .sessao-num { font-family:'Playfair Display',Georgia,serif; font-size:56px; font-weight:900; color:rgba(139,26,26,.1); line-height:1; text-align:center; padding-top:4px; }
+    .sessao-num span { display:block; font-family:'Montserrat',sans-serif; font-size:7px; letter-spacing:3px; text-transform:uppercase; color:rgba(139,26,26,.3); font-weight:400; margin-top:4px; }
+    .sessao-corpo {}
+    .sessao-titulo { font-family:'Playfair Display',Georgia,serif; font-size:22px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--crm); margin-bottom:6px; }
+    .sessao-data { font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:2px; text-transform:uppercase; color:rgba(244,237,224,.2); margin-bottom:20px; }
+    .sessao-vazio { font-family:'Cormorant Garamond',Georgia,serif; font-size:16px; font-style:italic; color:rgba(244,237,224,.15); line-height:1.7; }
+    .sessao-texto { font-family:'Cormorant Garamond',Georgia,serif; font-size:17px; color:rgba(244,237,224,.6); line-height:1.9; text-align:justify; }
+    .sessao-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:18px; }
+    .tag { font-family:'Montserrat',sans-serif; font-size:7px; letter-spacing:2px; text-transform:uppercase; padding:4px 10px; border:1px solid rgba(139,26,26,.2); color:rgba(244,237,224,.28); }
+    .tag.fill { background:rgba(139,26,26,.12); color:rgba(244,237,224,.5); border-color:rgba(139,26,26,.35); }
+    .sessao-revelacoes { margin-top:20px; padding:16px 20px; border-left:2px solid rgba(139,26,26,.25); background:rgba(139,26,26,.04); }
+    .revelacoes-lbl { font-family:'Montserrat',sans-serif; font-size:7px; letter-spacing:3px; text-transform:uppercase; color:rgba(139,26,26,.5); margin-bottom:8px; display:block; }
+    .revelacoes-texto { font-family:'Cormorant Garamond',Georgia,serif; font-size:15px; font-style:italic; color:rgba(244,237,224,.3); line-height:1.7; }
+
+    /* FIOS ATIVOS */
+    #fios { background:var(--drk); padding:72px 56px; }
+    .fios-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; max-width:1140px; margin:32px auto 0; }
+    .fio { background:var(--drk2); padding:24px; border-left:2px solid transparent; transition:border-color .3s; }
+    .fio:hover { border-left-color:var(--red2); }
+    .fio-lbl { font-family:'Montserrat',sans-serif; font-size:7px; letter-spacing:3px; text-transform:uppercase; color:rgba(139,26,26,.45); display:block; margin-bottom:6px; }
+    .fio-titulo { font-family:'Playfair Display',Georgia,serif; font-size:16px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--crm); margin-bottom:10px; }
+    .fio-vazio { font-family:'Cormorant Garamond',Georgia,serif; font-size:15px; font-style:italic; color:rgba(244,237,224,.15); }
+    .fio-texto { font-family:'Montserrat',sans-serif; font-size:10px; color:rgba(244,237,224,.35); line-height:1.65; }
+
+    /* FOOTER */
+    footer { padding:36px 56px; border-top:1px solid rgba(139,26,26,.15); display:flex; align-items:center; justify-content:space-between; }
+    .foot-logo { font-family:'Playfair Display',Georgia,serif; font-size:14px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--crm); }
+    .foot-logo em { font-style:normal; color:var(--red); }
+    .foot-meta { font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:2px; text-transform:uppercase; color:rgba(244,237,224,.2); }
+
+    @media(max-width:780px){
+      nav{padding:0 24px} nav ul{display:none}
+      #ph,#estado,.sec-head,.sec-rule,#sessoes,#fios,footer{padding-left:24px;padding-right:24px}
+      .estado-grid{grid-template-columns:1fr}
+      .sessao{grid-template-columns:1fr;gap:8px}
+      .sessao-num{font-size:32px;text-align:left}
+      .fios-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">La <em>Cour</em></div>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="historia.html">A Corte</a></li>
+    <li><a href="clas.html">Os Clãs</a></li>
+    <li><a href="momento-atual.html">O Momento</a></li>
+    <li><a href="personagens.html">Personagens</a></li>
+    <li><a href="sistema.html">O Sistema</a></li>
+    <li><a href="trama.html" class="on">A Trama</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="ph">
+  <span class="lbl">Evolução Narrativa</span>
+  <h1 class="h1">A Trama</h1>
+  <p class="h1-sub">Paris, 1932 — o que já aconteceu, o que ainda move</p>
+</section>
+
+<!-- ESTADO ATUAL -->
+<section id="estado">
+  <div style="max-width:1140px;margin:0 auto;">
+    <span class="lbl" style="color:var(--red);margin-bottom:6px;">Estado Atual</span>
+    <div style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3vw,34px);font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--txt);">O que está em jogo agora</div>
+  </div>
+  <div class="estado-grid">
+    <div class="estado-card ativo">
+      <span class="estado-lbl">A Corte</span>
+      <div class="estado-titulo">Situação do Conseil</div>
+      <p class="estado-vazio">A preencher conforme a campanha avança.</p>
+    </div>
+    <div class="estado-card">
+      <span class="estado-lbl">Les Dévoreurs</span>
+      <div class="estado-titulo">Atividade dos Renegados</div>
+      <p class="estado-vazio">A preencher conforme a campanha avança.</p>
+    </div>
+    <div class="estado-card">
+      <span class="estado-lbl">La Société Solaire</span>
+      <div class="estado-titulo">Movimentos dos Caçadores</div>
+      <p class="estado-vazio">A preencher conforme a campanha avança.</p>
+    </div>
+    <div class="estado-card">
+      <span class="estado-lbl">Os Personagens</span>
+      <div class="estado-titulo">Posição dos PCs</div>
+      <p class="estado-vazio">A preencher conforme a campanha avança.</p>
+    </div>
+    <div class="estado-card">
+      <span class="estado-lbl">Le Premier</span>
+      <div class="estado-titulo">Presença Sentida</div>
+      <p class="estado-vazio">A preencher conforme a campanha avança.</p>
+    </div>
+    <div class="estado-card">
+      <span class="estado-lbl">Segredos Revelados</span>
+      <div class="estado-titulo">O que os PCs já sabem</div>
+      <p class="estado-vazio">A preencher conforme a campanha avança.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SESSÕES -->
+<div class="sec-head">
+  <span class="sec-head-lbl">Registro de Sessões</span>
+  <h2 class="sec-head-h">O que já aconteceu</h2>
+</div>
+<div class="sec-rule"></div>
+
+<div id="sessoes">
+
+  <div class="sessao">
+    <div class="sessao-num">01<span>Sessão</span></div>
+    <div class="sessao-corpo">
+      <div class="sessao-titulo">Título da Sessão</div>
+      <div class="sessao-data">Data · Paris, 1932</div>
+      <p class="sessao-vazio">Esta sessão ainda não foi registrada.</p>
+      <div class="sessao-tags">
+        <span class="tag">A Corte</span>
+        <span class="tag">Les Dévoreurs</span>
+        <span class="tag">Société Solaire</span>
+        <span class="tag">Le Premier</span>
+        <span class="tag">Séraphin</span>
+      </div>
+      <div class="sessao-revelacoes">
+        <span class="revelacoes-lbl">Revelações & Consequências</span>
+        <p class="revelacoes-texto">O que mudou após esta sessão.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sessao">
+    <div class="sessao-num">02<span>Sessão</span></div>
+    <div class="sessao-corpo">
+      <div class="sessao-titulo">Título da Sessão</div>
+      <div class="sessao-data">Data · Paris, 1932</div>
+      <p class="sessao-vazio">Esta sessão ainda não foi registrada.</p>
+      <div class="sessao-tags">
+        <span class="tag">A Corte</span>
+        <span class="tag">Les Dévoreurs</span>
+        <span class="tag">Société Solaire</span>
+        <span class="tag">Le Premier</span>
+        <span class="tag">Séraphin</span>
+      </div>
+      <div class="sessao-revelacoes">
+        <span class="revelacoes-lbl">Revelações & Consequências</span>
+        <p class="revelacoes-texto">O que mudou após esta sessão.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sessao">
+    <div class="sessao-num">03<span>Sessão</span></div>
+    <div class="sessao-corpo">
+      <div class="sessao-titulo">Título da Sessão</div>
+      <div class="sessao-data">Data · Paris, 1932</div>
+      <p class="sessao-vazio">Esta sessão ainda não foi registrada.</p>
+      <div class="sessao-tags">
+        <span class="tag">A Corte</span>
+        <span class="tag">Les Dévoreurs</span>
+        <span class="tag">Société Solaire</span>
+        <span class="tag">Le Premier</span>
+        <span class="tag">Séraphin</span>
+      </div>
+      <div class="sessao-revelacoes">
+        <span class="revelacoes-lbl">Revelações & Consequências</span>
+        <p class="revelacoes-texto">O que mudou após esta sessão.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sessao">
+    <div class="sessao-num">04<span>Sessão</span></div>
+    <div class="sessao-corpo">
+      <div class="sessao-titulo">Título da Sessão</div>
+      <div class="sessao-data">Data · Paris, 1932</div>
+      <p class="sessao-vazio">Esta sessão ainda não foi registrada.</p>
+      <div class="sessao-tags">
+        <span class="tag">A Corte</span>
+        <span class="tag">Les Dévoreurs</span>
+        <span class="tag">Société Solaire</span>
+        <span class="tag">Le Premier</span>
+        <span class="tag">Séraphin</span>
+      </div>
+      <div class="sessao-revelacoes">
+        <span class="revelacoes-lbl">Revelações & Consequências</span>
+        <p class="revelacoes-texto">O que mudou após esta sessão.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sessao">
+    <div class="sessao-num">05<span>Sessão</span></div>
+    <div class="sessao-corpo">
+      <div class="sessao-titulo">Título da Sessão</div>
+      <div class="sessao-data">Data · Paris, 1932</div>
+      <p class="sessao-vazio">Esta sessão ainda não foi registrada.</p>
+      <div class="sessao-tags">
+        <span class="tag">A Corte</span>
+        <span class="tag">Les Dévoreurs</span>
+        <span class="tag">Société Solaire</span>
+        <span class="tag">Le Premier</span>
+        <span class="tag">Séraphin</span>
+      </div>
+      <div class="sessao-revelacoes">
+        <span class="revelacoes-lbl">Revelações & Consequências</span>
+        <p class="revelacoes-texto">O que mudou após esta sessão.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FIOS NARRATIVOS -->
+<section id="fios">
+  <div style="max-width:1140px;margin:0 auto 0;">
+    <span class="lbl" style="margin-bottom:6px;">Fios Narrativos</span>
+    <div style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3vw,34px);font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--crm);">O que ainda não se resolveu</div>
+  </div>
+  <div class="fios-grid">
+    <div class="fio">
+      <span class="fio-lbl">Fio Aberto · 01</span>
+      <div class="fio-titulo">A Preencher</div>
+      <p class="fio-vazio">A preencher conforme a campanha avança.</p>
+    </div>
+    <div class="fio">
+      <span class="fio-lbl">Fio Aberto · 02</span>
+      <div class="fio-titulo">A Preencher</div>
+      <p class="fio-vazio">A preencher conforme a campanha avança.</p>
+    </div>
+    <div class="fio">
+      <span class="fio-lbl">Fio Aberto · 03</span>
+      <div class="fio-titulo">A Preencher</div>
+      <p class="fio-vazio">A preencher conforme a campanha avança.</p>
+    </div>
+    <div class="fio">
+      <span class="fio-lbl">Fio Aberto · 04</span>
+      <div class="fio-titulo">A Preencher</div>
+      <p class="fio-vazio">A preencher conforme a campanha avança.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">La <em>Cour</em></div>
+  <div class="foot-meta">Paris · 1932 · RPG</div>
+</footer>
+
+</body>
+</html>
