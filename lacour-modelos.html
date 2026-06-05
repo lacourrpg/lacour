@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Modelos de Post — La Cour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{--blk:#070202;--drk:#110404;--drk2:#1b0606;--red:#8b1a1a;--red2:#6b1010;--gld:#c9a97a;--crm:#f4ede0;--crm2:#ece4d4;--txt:#1c0a0a;--mut:#5c3030}
+body{background:var(--blk);color:var(--crm);font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;line-height:1.75;overflow-x:hidden}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--blk)}::-webkit-scrollbar-thumb{background:var(--red2)}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:64px;background:linear-gradient(to bottom,rgba(7,2,2,.97) 60%,transparent)}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:14px;font-weight:700;letter-spacing:5px;text-transform:uppercase}
+.nav-logo em{font-style:normal;color:var(--red)}
+nav ul{list-style:none;display:flex;gap:28px}
+nav ul a{font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(244,237,224,.4);transition:color .3s}
+nav ul a:hover,nav ul a.on{color:var(--crm)}
+#ph{padding:130px 56px 50px;text-align:center;position:relative;overflow:hidden}
+#ph::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center bottom,rgba(139,26,26,.1) 0%,transparent 65%)}
+#ph h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(36px,5vw,64px);font-weight:900;text-transform:uppercase;letter-spacing:3px;color:var(--crm);line-height:.95}
+#ph .sub{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-style:italic;color:rgba(244,237,224,.38);margin-top:14px}
+.lbl{font-family:'Montserrat',sans-serif;font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--red);display:block}
+.tabs{display:flex;border-bottom:1px solid rgba(139,26,26,.18);max-width:1100px;margin:0 auto;padding:0 56px}
+.tab{font-family:'Montserrat',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(244,237,224,.35);padding:12px 20px;cursor:pointer;border-bottom:2px solid transparent;transition:color .3s,border-color .3s}
+.tab.on{color:var(--crm);border-bottom-color:var(--red)}
+.tab:hover{color:rgba(244,237,224,.7)}
+.section{display:none;padding:56px 56px 80px;max-width:1100px;margin:0 auto}
+.section.on{display:block}
+.section-intro{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-style:italic;color:rgba(244,237,224,.42);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid rgba(139,26,26,.12)}
+.mc{margin-bottom:60px;padding-bottom:60px;border-bottom:1px solid rgba(139,26,26,.1)}
+.mc:last-child{border-bottom:none}
+.ml{font-family:'Montserrat',sans-serif;font-size:7px;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.mn{font-family:'Playfair Display',Georgia,serif;font-size:11px;color:rgba(244,237,224,.2);margin-bottom:16px}
+.prev{margin-bottom:18px}
+.cl{font-family:'Montserrat',sans-serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;color:rgba(244,237,224,.2);margin-bottom:7px}
+.code{background:#050101;border:1px solid rgba(139,26,26,.12);padding:14px;font-family:'Courier New',monospace;font-size:10px;color:rgba(244,237,224,.3);line-height:1.6;white-space:pre-wrap;word-break:break-all;max-height:170px;overflow-y:auto;cursor:text;user-select:all}
+.code::-webkit-scrollbar{width:3px}.code::-webkit-scrollbar-thumb{background:var(--red2)}
+.cbtn{margin-top:8px;font-family:'Montserrat',sans-serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;border:1px solid rgba(139,26,26,.3);color:rgba(244,237,224,.4);background:transparent;cursor:pointer;transition:all .3s}
+.cbtn:hover{border-color:var(--red);color:var(--crm);background:rgba(139,26,26,.1)}
+footer{padding:36px 56px;border-top:1px solid rgba(139,26,26,.15);display:flex;align-items:center;justify-content:space-between}
+.foot-logo{font-family:'Playfair Display',Georgia,serif;font-size:14px;font-weight:700;letter-spacing:4px;text-transform:uppercase}
+.foot-logo em{color:var(--red);font-style:normal}
+.foot-meta{font-family:'Montserrat',sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(244,237,224,.2)}
+@media(max-width:780px){nav{padding:0 24px}nav ul{display:none}#ph,.tabs,.section{padding-left:20px;padding-right:20px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">La <em>Cour</em></div>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="historia.html">A Corte</a></li>
+    <li><a href="momento-atual.html">O Momento</a></li>
+    <li><a href="personagens.html">Personagens</a></li>
+    <li><a href="sistema.html">O Sistema</a></li>
+    <li><a href="#" class="on">Modelos</a></li>
+  </ul>
+</nav>
+
+<section id="ph">
+  <span class="lbl" style="text-align:center;margin-bottom:12px;">Loreverse · La Cour</span>
+  <h1>Modelos<br/><span style="font-size:.5em;font-weight:400;font-style:italic;color:var(--gld);letter-spacing:10px;">de Post</span></h1>
+  <p class="sub">Copie, adapte e cole no fórum. HTML inline puro — compatível com o Loreverse.</p>
+</section>
+
+<div class="tabs">
+  <div class="tab on" onclick="show('headers',this)">Headers</div>
+  <div class="tab" onclick="show('fichas',this)">Fichas</div>
+  <div class="tab" onclick="show('turnos',this)">Turnos</div>
+  <div class="tab" onclick="show('rodapes',this)">Rodapés</div>
+</div>
+
+<!-- ═══════ HEADERS ═══════ -->
+<div id="headers" class="section on">
+<p class="section-intro">Cabeçalhos para posts de personagem. Troque os campos [ENTRE COLCHETES] pelos dados do seu personagem.</p>
+
+<!-- H01 -->
+<div class="mc">
+<div class="ml">Header 01</div><div class="mn">Foto esquerda · Degradê azul naval · Nome itálico+bold</div>
+<div class="prev"><center><div style="width:80%;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+<td style="width:86px;background:#0a1420;padding:13px;"><img src="//placehold.co/60x60/0a1420/204060?text=XX" style="width:60px;height:60px;border:1px solid #204060;display:block;"/></td>
+<td style="background:linear-gradient(135deg,#0a1420,#162030);padding:16px 20px;">
+<div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:4px;color:#204060;margin-bottom:7px;">[CLÃ] &nbsp;·&nbsp; [NATUREZA]</div>
+<div style="font-family:'Palatino Linotype',serif;font-size:25px;color:#c8d8e8;line-height:1;"><i>Nome</i><b style="color:#fff;">Sobrenome</b></div>
+<div style="height:1px;background:linear-gradient(to right,#4a8ab0,transparent);margin-top:10px;"></div>
+</td></tr></tbody></table>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="h01">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+  &lt;td style="width:86px;background:#0a1420;padding:13px;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:60px;height:60px;border:1px solid #204060;display:block;"/&gt;
+  &lt;/td&gt;
+  &lt;td style="background:linear-gradient(135deg,#0a1420,#162030);padding:16px 20px;"&gt;
+    &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:4px;color:#204060;margin-bottom:7px;"&gt;[CLÃ] &amp;nbsp;·&amp;nbsp; [NATUREZA]&lt;/div&gt;
+    &lt;div style="font-family:'Palatino Linotype',serif;font-size:25px;color:#c8d8e8;line-height:1;"&gt;&lt;i&gt;[NOME]&lt;/i&gt;&lt;b style="color:#fff;"&gt;[SOBRENOME]&lt;/b&gt;&lt;/div&gt;
+    &lt;div style="height:1px;background:linear-gradient(to right,#4a8ab0,transparent);margin-top:10px;"&gt;&lt;/div&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('h01')">Copiar código</button>
+</div>
+
+<!-- H02 -->
+<div class="mc">
+<div class="ml">Header 02</div><div class="mn">Três faixas empilhadas · Tom dourado-sépia · Sem foto</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#181204;padding:6px 18px;"><span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:5px;color:#4a3808;">[CLÃ]</span></div>
+<div style="background:linear-gradient(to right,#100e02,#1c1808);padding:14px 18px;">
+  <div style="font-family:'Palatino Linotype',serif;font-size:28px;color:#e8d498;line-height:1;"><i>Nome</i><b style="color:#c9a97a;">Sobrenome</b></div>
+</div>
+<div style="background:#0c0a02;padding:6px 18px;border-bottom:2px solid #382804;"><span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:4px;color:#382808;">[NATUREZA] &nbsp;·&nbsp; [IDADE] anos &nbsp;·&nbsp; [OCUPAÇÃO]</span></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="h02">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#181204;padding:6px 18px;"&gt;
+  &lt;span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:5px;color:#4a3808;"&gt;[CLÃ]&lt;/span&gt;
+&lt;/div&gt;
+&lt;div style="background:linear-gradient(to right,#100e02,#1c1808);padding:14px 18px;"&gt;
+  &lt;div style="font-family:'Palatino Linotype',serif;font-size:28px;color:#e8d498;line-height:1;"&gt;&lt;i&gt;[NOME]&lt;/i&gt;&lt;b style="color:#c9a97a;"&gt;[SOBRENOME]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style="background:#0c0a02;padding:6px 18px;border-bottom:2px solid #382804;"&gt;
+  &lt;span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:4px;color:#382808;"&gt;[NATUREZA] &amp;nbsp;·&amp;nbsp; [IDADE] anos &amp;nbsp;·&amp;nbsp; [OCUPAÇÃO]&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('h02')">Copiar código</button>
+</div>
+
+<!-- H03 -->
+<div class="mc">
+<div class="ml">Header 03</div><div class="mn">Foto direita · Texto esquerda · Degradê verde musgo</div>
+<div class="prev"><center><div style="width:80%;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+<td style="background:linear-gradient(to right,#081408,#101c10);padding:16px 18px;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:5px;color:#284828;margin-bottom:8px;">[CLÃ] &nbsp;·&nbsp; [NATUREZA]</div>
+  <div style="font-family:'Palatino Linotype',serif;font-size:24px;color:#c0d8c0;line-height:1;margin-bottom:8px;"><i>Nome</i><b>Sobrenome</b></div>
+  <div style="height:1px;background:linear-gradient(to right,#387848,transparent);"></div>
+</td>
+<td style="width:86px;background:#081408;padding:13px;border-left:2px solid #182818;">
+  <img src="//placehold.co/60x60/081408/284828?text=XX" style="width:60px;height:60px;border:1px solid #284828;display:block;"/>
+</td>
+</tr></tbody></table>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="h03">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+  &lt;td style="background:linear-gradient(to right,#081408,#101c10);padding:16px 18px;"&gt;
+    &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:5px;color:#284828;margin-bottom:8px;"&gt;[CLÃ] &amp;nbsp;·&amp;nbsp; [NATUREZA]&lt;/div&gt;
+    &lt;div style="font-family:'Palatino Linotype',serif;font-size:24px;color:#c0d8c0;line-height:1;margin-bottom:8px;"&gt;&lt;i&gt;[NOME]&lt;/i&gt;&lt;b&gt;[SOBRENOME]&lt;/b&gt;&lt;/div&gt;
+    &lt;div style="height:1px;background:linear-gradient(to right,#387848,transparent);"&gt;&lt;/div&gt;
+  &lt;/td&gt;
+  &lt;td style="width:86px;background:#081408;padding:13px;border-left:2px solid #182818;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:60px;height:60px;border:1px solid #284828;display:block;"/&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('h03')">Copiar código</button>
+</div>
+
+<!-- H04 -->
+<div class="mc">
+<div class="ml">Header 04</div><div class="mn">Nome centralizado · Linhas decorativas · Tom creme escuro</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#181410;padding:22px 20px;text-align:center;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:6px;color:#483820;margin-bottom:4px;">[CLÃ]</div>
+  <div style="height:1px;background:linear-gradient(to right,transparent,#685030,transparent);margin:8px 0;"></div>
+  <div style="font-family:'Palatino Linotype',serif;font-size:28px;color:#e8d8b0;line-height:1;margin-bottom:8px;"><i>Nome</i><b>Sobrenome</b></div>
+  <div style="height:1px;background:linear-gradient(to right,transparent,#685030,transparent);margin-bottom:8px;"></div>
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:5px;color:#382a14;">[NATUREZA] &nbsp;·&nbsp; [IDADE] anos</div>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="h04">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#181410;padding:22px 20px;text-align:center;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:6px;color:#483820;margin-bottom:4px;"&gt;[CLÃ]&lt;/div&gt;
+  &lt;div style="height:1px;background:linear-gradient(to right,transparent,#685030,transparent);margin:8px 0;"&gt;&lt;/div&gt;
+  &lt;div style="font-family:'Palatino Linotype',serif;font-size:28px;color:#e8d8b0;line-height:1;margin-bottom:8px;"&gt;&lt;i&gt;[NOME]&lt;/i&gt;&lt;b&gt;[SOBRENOME]&lt;/b&gt;&lt;/div&gt;
+  &lt;div style="height:1px;background:linear-gradient(to right,transparent,#685030,transparent);margin-bottom:8px;"&gt;&lt;/div&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:5px;color:#382a14;"&gt;[NATUREZA] &amp;nbsp;·&amp;nbsp; [IDADE] anos&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('h04')">Copiar código</button>
+</div>
+
+<!-- H05 -->
+<div class="mc">
+<div class="ml">Header 05</div><div class="mn">Barra lateral · Foto redonda · Tom cinza grafite</div>
+<div class="prev"><center><div style="width:80%;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr>
+<td style="width:4px;background:linear-gradient(to bottom,#909090,#383838);"></td>
+<td style="width:78px;padding:13px 11px;text-align:center;border-right:1px solid #282828;background:#121212;">
+  <img src="//placehold.co/52x52/121212/484848?text=XX" style="width:52px;height:52px;border-radius:50%;border:2px solid #585858;display:block;margin:0 auto;"/>
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:2px;color:#383838;margin-top:5px;">[PLAYER]</div>
+</td>
+<td style="padding:13px 18px;vertical-align:middle;background:#0c0c0c;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:4px;color:#484848;margin-bottom:5px;">[NATUREZA]</div>
+  <div style="font-family:'Palatino Linotype',serif;font-size:24px;color:#d8d8d8;line-height:1;"><i>Nome</i><b>Sobrenome</b></div>
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#383838;margin-top:5px;">[CLÃ] &nbsp;·&nbsp; [IDADE] anos</div>
+</td>
+</tr></tbody></table>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="h05">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;
+  &lt;td style="width:4px;background:linear-gradient(to bottom,#909090,#383838);"&gt;&lt;/td&gt;
+  &lt;td style="width:78px;padding:13px 11px;text-align:center;border-right:1px solid #282828;background:#121212;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:52px;height:52px;border-radius:50%;border:2px solid #585858;display:block;margin:0 auto;"/&gt;
+    &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:2px;color:#383838;margin-top:5px;"&gt;[PLAYER]&lt;/div&gt;
+  &lt;/td&gt;
+  &lt;td style="padding:13px 18px;vertical-align:middle;background:#0c0c0c;"&gt;
+    &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:4px;color:#484848;margin-bottom:5px;"&gt;[NATUREZA]&lt;/div&gt;
+    &lt;div style="font-family:'Palatino Linotype',serif;font-size:24px;color:#d8d8d8;line-height:1;"&gt;&lt;i&gt;[NOME]&lt;/i&gt;&lt;b&gt;[SOBRENOME]&lt;/b&gt;&lt;/div&gt;
+    &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#383838;margin-top:5px;"&gt;[CLÃ] &amp;nbsp;·&amp;nbsp; [IDADE] anos&lt;/div&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('h05')">Copiar código</button>
+</div>
+
+<!-- H06 -->
+<div class="mc">
+<div class="ml">Header 06</div><div class="mn">Foto com borda degradê · Degradê vinho diagonal</div>
+<div class="prev"><center><div style="width:80%;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+<td style="width:94px;background:linear-gradient(135deg,#380818,#180408);padding:14px;text-align:center;">
+  <div style="background:linear-gradient(135deg,#881828,#380818);padding:2px;display:inline-block;">
+    <img src="//placehold.co/64x64/180408/581020?text=XX" style="width:64px;height:64px;display:block;"/>
+  </div>
+</td>
+<td style="background:linear-gradient(135deg,#180408,#280c10);padding:16px 20px;">
+  <div style="font-family:'Palatino Linotype',serif;font-size:25px;color:#f0c8c8;line-height:1;margin-bottom:7px;"><i>Nome</i><b style="color:#fff;">Sobrenome</b></div>
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#582028;">[CLÃ] &nbsp;·&nbsp; [NATUREZA] &nbsp;·&nbsp; [IDADE] anos</div>
+</td>
+</tr></tbody></table>
+<div style="height:2px;background:linear-gradient(to right,#380818,#881828,#380818);"></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="h06">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+  &lt;td style="width:94px;background:linear-gradient(135deg,#380818,#180408);padding:14px;text-align:center;"&gt;
+    &lt;div style="background:linear-gradient(135deg,#881828,#380818);padding:2px;display:inline-block;"&gt;
+      &lt;img src="[URL DA IMAGEM]" style="width:64px;height:64px;display:block;"/&gt;
+    &lt;/div&gt;
+  &lt;/td&gt;
+  &lt;td style="background:linear-gradient(135deg,#180408,#280c10);padding:16px 20px;"&gt;
+    &lt;div style="font-family:'Palatino Linotype',serif;font-size:25px;color:#f0c8c8;line-height:1;margin-bottom:7px;"&gt;&lt;i&gt;[NOME]&lt;/i&gt;&lt;b style="color:#fff;"&gt;[SOBRENOME]&lt;/b&gt;&lt;/div&gt;
+    &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#582028;"&gt;[CLÃ] &amp;nbsp;·&amp;nbsp; [NATUREZA] &amp;nbsp;·&amp;nbsp; [IDADE] anos&lt;/div&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;div style="height:2px;background:linear-gradient(to right,#380818,#881828,#380818);"&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('h06')">Copiar código</button>
+</div>
+
+<!-- H07 -->
+<div class="mc">
+<div class="ml">Header 07</div><div class="mn">Meta em linha no topo · Nome + foto abaixo · Tom slate</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#0c1018;border-bottom:1px solid #1c2430;">
+  <table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="padding:6px 16px;border-right:1px solid #1c2430;"><span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#283848;">[CLÃ]</span></td>
+    <td style="padding:6px 16px;border-right:1px solid #1c2430;"><span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#283848;">[IDADE] anos</span></td>
+    <td style="padding:6px 16px;border-right:1px solid #1c2430;"><span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#283848;">[OCUPAÇÃO]</span></td>
+    <td style="padding:6px 16px;text-align:right;"><span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#384858;font-style:italic;">[NATUREZA]</span></td>
+  </tr></tbody></table>
+</div>
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+  <td style="background:linear-gradient(to right,#0c1018,#182030);padding:13px 18px;">
+    <div style="font-family:'Palatino Linotype',serif;font-size:26px;color:#c8d8e8;line-height:1;"><i>Nome</i><b>Sobrenome</b></div>
+  </td>
+  <td style="width:76px;background:#08101a;padding:11px;border-left:1px solid #1c2430;">
+    <img src="//placehold.co/54x54/08101a/283848?text=XX" style="width:54px;height:54px;display:block;"/>
+  </td>
+</tr></tbody></table>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="h07">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#0c1018;border-bottom:1px solid #1c2430;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;
+    &lt;td style="padding:6px 16px;border-right:1px solid #1c2430;"&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#283848;"&gt;[CLÃ]&lt;/span&gt;&lt;/td&gt;
+    &lt;td style="padding:6px 16px;border-right:1px solid #1c2430;"&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#283848;"&gt;[IDADE] anos&lt;/span&gt;&lt;/td&gt;
+    &lt;td style="padding:6px 16px;border-right:1px solid #1c2430;"&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#283848;"&gt;[OCUPAÇÃO]&lt;/span&gt;&lt;/td&gt;
+    &lt;td style="padding:6px 16px;text-align:right;"&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:3px;color:#384858;font-style:italic;"&gt;[NATUREZA]&lt;/span&gt;&lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+  &lt;td style="background:linear-gradient(to right,#0c1018,#182030);padding:13px 18px;"&gt;
+    &lt;div style="font-family:'Palatino Linotype',serif;font-size:26px;color:#c8d8e8;line-height:1;"&gt;&lt;i&gt;[NOME]&lt;/i&gt;&lt;b&gt;[SOBRENOME]&lt;/b&gt;&lt;/div&gt;
+  &lt;/td&gt;
+  &lt;td style="width:76px;background:#08101a;padding:11px;border-left:1px solid #1c2430;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:54px;height:54px;display:block;"/&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('h07')">Copiar código</button>
+</div>
+
+<!-- H08 -->
+<div class="mc">
+<div class="ml">Header 08</div><div class="mn">Foto alta esquerda · Nome empilhado · Degradê terra</div>
+<div class="prev"><center><div style="width:80%;">
+<table style="width:100%;border-collapse:collapse;background:linear-gradient(to bottom,#201408,#181008);" cellpadding="0" cellspacing="0"><tbody><tr valign="top">
+  <td style="width:100px;">
+    <img src="//placehold.co/100x100/180e04/484018?text=XX" style="width:100px;height:100px;display:block;"/>
+  </td>
+  <td style="padding:0;vertical-align:top;">
+    <div style="padding:12px 18px 5px;">
+      <div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:4px;color:#584018;margin-bottom:4px;">[CLÃ] &nbsp;·&nbsp; [NATUREZA]</div>
+      <div style="font-family:'Palatino Linotype',serif;font-size:24px;color:#e8d8b8;line-height:1;"><i>Nome</i><b>Sobrenome</b></div>
+    </div>
+    <div style="padding:5px 18px 12px;">
+      <span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;color:#181008;background:linear-gradient(to right,#d8a840,#a87820);padding:2px 7px;margin-right:8px;">idade</span><span style="font-family:'Segoe UI',sans-serif;font-size:7.5px;color:#c8a060;text-transform:uppercase;margin-right:14px;">[IDADE] anos</span>
+      <span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;color:#181008;background:linear-gradient(to right,#d8a840,#a87820);padding:2px 7px;margin-right:8px;">ocup.</span><span style="font-family:'Segoe UI',sans-serif;font-size:7.5px;color:#c8a060;text-transform:uppercase;">[OCUPAÇÃO]</span>
+    </div>
+  </td>
+</tr></tbody></table>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="h08">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;table style="width:100%;border-collapse:collapse;background:linear-gradient(to bottom,#201408,#181008);" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="top"&gt;
+  &lt;td style="width:100px;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:100px;height:100px;display:block;"/&gt;
+  &lt;/td&gt;
+  &lt;td style="padding:0;vertical-align:top;"&gt;
+    &lt;div style="padding:12px 18px 5px;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:4px;color:#584018;margin-bottom:4px;"&gt;[CLÃ] &amp;nbsp;·&amp;nbsp; [NATUREZA]&lt;/div&gt;
+      &lt;div style="font-family:'Palatino Linotype',serif;font-size:24px;color:#e8d8b8;line-height:1;"&gt;&lt;i&gt;[NOME]&lt;/i&gt;&lt;b&gt;[SOBRENOME]&lt;/b&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style="padding:5px 18px 12px;"&gt;
+      &lt;span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;color:#181008;background:linear-gradient(to right,#d8a840,#a87820);padding:2px 7px;margin-right:8px;"&gt;idade&lt;/span&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:7.5px;color:#c8a060;text-transform:uppercase;margin-right:14px;"&gt;[IDADE] anos&lt;/span&gt;
+      &lt;span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;color:#181008;background:linear-gradient(to right,#d8a840,#a87820);padding:2px 7px;margin-right:8px;"&gt;ocup.&lt;/span&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:7.5px;color:#c8a060;text-transform:uppercase;"&gt;[OCUPAÇÃO]&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('h08')">Copiar código</button>
+</div>
+
+<!-- H09 -->
+<div class="mc">
+<div class="ml">Header 09</div><div class="mn">Faixa topo colorida · Nome minimalista · Tom teal</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="height:3px;background:linear-gradient(to right,#042028,#3a9aaa,#042028);"></div>
+<div style="background:#040e12;padding:16px 20px;">
+  <table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+    <td>
+      <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:5px;color:#183848;margin-bottom:9px;">[CLÃ] &nbsp;·&nbsp; [NATUREZA] &nbsp;·&nbsp; [IDADE] anos</div>
+      <div style="font-family:'Palatino Linotype',serif;font-size:26px;color:#b8d8e0;line-height:1;"><i>Nome</i><b>Sobrenome</b></div>
+    </td>
+    <td style="width:70px;text-align:right;">
+      <img src="//placehold.co/54x54/040e12/183848?text=XX" style="width:54px;height:54px;border:1px solid #1a3a48;display:block;margin-left:auto;"/>
+    </td>
+  </tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="h09">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="height:3px;background:linear-gradient(to right,#042028,#3a9aaa,#042028);"&gt;&lt;/div&gt;
+&lt;div style="background:#040e12;padding:16px 20px;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+    &lt;td&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:5px;color:#183848;margin-bottom:9px;"&gt;[CLÃ] &amp;nbsp;·&amp;nbsp; [NATUREZA] &amp;nbsp;·&amp;nbsp; [IDADE] anos&lt;/div&gt;
+      &lt;div style="font-family:'Palatino Linotype',serif;font-size:26px;color:#b8d8e0;line-height:1;"&gt;&lt;i&gt;[NOME]&lt;/i&gt;&lt;b&gt;[SOBRENOME]&lt;/b&gt;&lt;/div&gt;
+    &lt;/td&gt;
+    &lt;td style="width:70px;text-align:right;"&gt;
+      &lt;img src="[URL DA IMAGEM]" style="width:54px;height:54px;border:1px solid #1a3a48;display:block;margin-left:auto;"/&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('h09')">Copiar código</button>
+</div>
+
+<!-- H10 -->
+<div class="mc">
+<div class="ml">Header 10</div><div class="mn">Sem foto · Degradê indigo · Nome grande com linha</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:linear-gradient(135deg,#080c1a,#101828,#080c1a);padding:20px 22px;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:6px;color:#183060;margin-bottom:12px;">[CLÃ] &nbsp;·&nbsp; [NATUREZA]</div>
+  <div style="font-family:'Palatino Linotype',serif;font-size:30px;color:#a8c0e0;line-height:1;margin-bottom:10px;"><i>Nome</i><b style="color:#e0eaf8;">Sobrenome</b></div>
+  <table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="height:1px;background:linear-gradient(to right,#3060a0,transparent);"></td>
+    <td style="white-space:nowrap;padding-left:10px;"><span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:4px;color:#183060;">[IDADE] anos &nbsp;·&nbsp; [OCUPAÇÃO]</span></td>
+  </tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="h10">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:linear-gradient(135deg,#080c1a,#101828,#080c1a);padding:20px 22px;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;letter-spacing:6px;color:#183060;margin-bottom:12px;"&gt;[CLÃ] &amp;nbsp;·&amp;nbsp; [NATUREZA]&lt;/div&gt;
+  &lt;div style="font-family:'Palatino Linotype',serif;font-size:30px;color:#a8c0e0;line-height:1;margin-bottom:10px;"&gt;&lt;i&gt;[NOME]&lt;/i&gt;&lt;b style="color:#e0eaf8;"&gt;[SOBRENOME]&lt;/b&gt;&lt;/div&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;
+    &lt;td style="height:1px;background:linear-gradient(to right,#3060a0,transparent);"&gt;&lt;/td&gt;
+    &lt;td style="white-space:nowrap;padding-left:10px;"&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:4px;color:#183060;"&gt;[IDADE] anos &amp;nbsp;·&amp;nbsp; [OCUPAÇÃO]&lt;/span&gt;&lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('h10')">Copiar código</button>
+</div>
+
+</div><!-- /headers -->
+
+<!-- ═══════ FICHAS ═══════ -->
+<div id="fichas" class="section">
+<p class="section-intro">Blocos de ficha com atributos. Substitua [X] pelos valores numéricos do personagem.</p>
+
+<!-- F01 -->
+<div class="mc">
+<div class="ml">Ficha 01</div><div class="mn">3 colunas · Degradê azul · Com perfil</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#0c1620;padding:13px 15px;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="top">
+<td style="width:30%;padding-right:11px;border-right:1px solid #182838;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#285878;border-bottom:1px solid #182838;padding-bottom:3px;margin-bottom:6px;">identidade</div>
+  <div style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#688898;text-transform:uppercase;line-height:175%;"><span style="color:#b0c8d8;">nome</span> — Nome Sobrenome<br><span style="color:#b0c8d8;">clã</span> — Clã XX<br><span style="color:#b0c8d8;">idade</span> — XX anos<br><span style="color:#b0c8d8;">ocup.</span> — Ocupação</div>
+</td>
+<td style="width:38%;padding:0 11px;border-right:1px solid #182838;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#285878;border-bottom:1px solid #182838;padding-bottom:3px;margin-bottom:6px;">atributos</div>
+  <table cellpadding="0" cellspacing="3"><tbody><tr>
+    <td><div style="background:linear-gradient(135deg,#4898b8,#1868888);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">soc<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#387898,#086878);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">vel<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#285870,#083848);color:#90c0d0;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">sig<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#183850,#081828);color:#487898;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">ego<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#0c2030,#040e18);color:#284858;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">hip<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#060c14,#02060a);color:#122030;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">fis<br>X</div></td>
+  </tr></tbody></table>
+</td>
+<td style="padding-left:11px;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#285878;border-bottom:1px solid #182838;padding-bottom:3px;margin-bottom:6px;">perfil</div>
+  <div style="font-family:Verdana,sans-serif;font-size:8px;color:#385868;line-height:160%;text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</div>
+</td>
+</tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="f01">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#0c1620;padding:13px 15px;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="top"&gt;
+    &lt;td style="width:30%;padding-right:11px;border-right:1px solid #182838;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#285878;border-bottom:1px solid #182838;padding-bottom:3px;margin-bottom:6px;"&gt;identidade&lt;/div&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#688898;text-transform:uppercase;line-height:175%;"&gt;
+        &lt;span style="color:#b0c8d8;"&gt;nome&lt;/span&gt; — [NOME SOBRENOME]&lt;br&gt;
+        &lt;span style="color:#b0c8d8;"&gt;clã&lt;/span&gt; — [CLÃ]&lt;br&gt;
+        &lt;span style="color:#b0c8d8;"&gt;idade&lt;/span&gt; — [IDADE] anos&lt;br&gt;
+        &lt;span style="color:#b0c8d8;"&gt;ocup.&lt;/span&gt; — [OCUPAÇÃO]
+      &lt;/div&gt;
+    &lt;/td&gt;
+    &lt;td style="width:38%;padding:0 11px;border-right:1px solid #182838;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#285878;border-bottom:1px solid #182838;padding-bottom:3px;margin-bottom:6px;"&gt;atributos&lt;/div&gt;
+      &lt;table cellpadding="0" cellspacing="3"&gt;&lt;tbody&gt;&lt;tr&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#4898b8,#186888);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;soc&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#387898,#086878);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;vel&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#285870,#083848);color:#90c0d0;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;sig&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#183850,#081828);color:#487898;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;ego&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#0c2030,#040e18);color:#284858;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;hip&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#060c14,#02060a);color:#122030;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;fis&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+      &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+    &lt;/td&gt;
+    &lt;td style="padding-left:11px;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#285878;border-bottom:1px solid #182838;padding-bottom:3px;margin-bottom:6px;"&gt;perfil&lt;/div&gt;
+      &lt;div style="font-family:Verdana,sans-serif;font-size:8px;color:#385868;line-height:160%;text-align:justify;"&gt;[PERFIL DO PERSONAGEM]&lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('f01')">Copiar código</button>
+</div>
+
+<!-- F02 -->
+<div class="mc">
+<div class="ml">Ficha 02</div><div class="mn">Barra full-width · Degradê dourado · Dados em linha</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#141002;padding:11px 15px 9px;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+<td style="width:40%;padding-right:12px;border-right:1px solid #281e04;font-family:'Segoe UI',sans-serif;font-size:7.5px;color:#584010;text-transform:uppercase;line-height:180%;"><span style="color:#e8d498;">nome</span> — Nome Sobrenome<br><span style="color:#e8d498;">clã</span> — Clã &nbsp;·&nbsp; <span style="color:#e8d498;">idade</span> — XX</td>
+<td style="padding-left:12px;">
+<table cellpadding="0" cellspacing="0" style="width:100%;"><tbody><tr>
+  <td style="background:linear-gradient(to right,#d8a838,#a87818);color:#0c0a02;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;">soc X</td>
+  <td style="background:linear-gradient(to right,#b89028,#887010);color:#0c0a02;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;">vel X</td>
+  <td style="background:linear-gradient(to right,#887018,#584808);color:#e8d498;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;">sig X</td>
+  <td style="background:linear-gradient(to right,#584808,#301e02);color:#c8a038;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;">ego X</td>
+  <td style="background:linear-gradient(to right,#281602,#140c01);color:#786030;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;">hip X</td>
+  <td style="background:linear-gradient(to right,#100a01,#080501);color:#301e08;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;">fis X</td>
+</tr></tbody></table>
+</td>
+</tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="f02">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#141002;padding:11px 15px 9px;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+    &lt;td style="width:40%;padding-right:12px;border-right:1px solid #281e04;font-family:'Segoe UI',sans-serif;font-size:7.5px;color:#584010;text-transform:uppercase;line-height:180%;"&gt;
+      &lt;span style="color:#e8d498;"&gt;nome&lt;/span&gt; — [NOME SOBRENOME]&lt;br&gt;
+      &lt;span style="color:#e8d498;"&gt;clã&lt;/span&gt; — [CLÃ] &amp;nbsp;·&amp;nbsp; &lt;span style="color:#e8d498;"&gt;idade&lt;/span&gt; — [IDADE]
+    &lt;/td&gt;
+    &lt;td style="padding-left:12px;"&gt;
+      &lt;table cellpadding="0" cellspacing="0" style="width:100%;"&gt;&lt;tbody&gt;&lt;tr&gt;
+        &lt;td style="background:linear-gradient(to right,#d8a838,#a87818);color:#0c0a02;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;"&gt;soc [X]&lt;/td&gt;
+        &lt;td style="background:linear-gradient(to right,#b89028,#887010);color:#0c0a02;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;"&gt;vel [X]&lt;/td&gt;
+        &lt;td style="background:linear-gradient(to right,#887018,#584808);color:#e8d498;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;"&gt;sig [X]&lt;/td&gt;
+        &lt;td style="background:linear-gradient(to right,#584808,#301e02);color:#c8a038;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;"&gt;ego [X]&lt;/td&gt;
+        &lt;td style="background:linear-gradient(to right,#281602,#140c01);color:#786030;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;"&gt;hip [X]&lt;/td&gt;
+        &lt;td style="background:linear-gradient(to right,#100a01,#080501);color:#301e08;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:bold;width:16.6%;"&gt;fis [X]&lt;/td&gt;
+      &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('f02')">Copiar código</button>
+</div>
+
+<!-- F03 -->
+<div class="mc">
+<div class="ml">Ficha 03</div><div class="mn">Grid 3x2 atributos grandes · Degradê verde · Sem perfil</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#081408;padding:13px 15px;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+<td style="padding-right:13px;border-right:1px solid #182818;">
+  <table cellpadding="0" cellspacing="4"><tbody>
+    <tr>
+      <td><div style="background:linear-gradient(135deg,#58a868,#287838);color:#081408;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;">soc<br><span style="font-size:11px;">X</span></div></td>
+      <td><div style="background:linear-gradient(135deg,#488858,#185828);color:#081408;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;">vel<br><span style="font-size:11px;">X</span></div></td>
+      <td><div style="background:linear-gradient(135deg,#386848,#084818);color:#c0e0c8;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;">sig<br><span style="font-size:11px;">X</span></div></td>
+    </tr>
+    <tr>
+      <td><div style="background:linear-gradient(135deg,#264830,#0e2010);color:#589868;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;">ego<br><span style="font-size:11px;">X</span></div></td>
+      <td><div style="background:linear-gradient(135deg,#142818,#080e08);color:#387840;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;">hip<br><span style="font-size:11px;">X</span></div></td>
+      <td><div style="background:linear-gradient(135deg,#080e08,#040604);color:#183018;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;">fis<br><span style="font-size:11px;">X</span></div></td>
+    </tr>
+  </tbody></table>
+</td>
+<td style="padding-left:13px;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#386838;text-transform:uppercase;line-height:190%;"><span style="color:#c0e0c8;">nome</span> — Nome Sobrenome<br><span style="color:#c0e0c8;">clã</span> — Clã XX<br><span style="color:#c0e0c8;">idade</span> — XX anos<br><span style="color:#386838;font-style:italic;">[NATUREZA]</span></div>
+</td>
+</tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="f03">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#081408;padding:13px 15px;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+    &lt;td style="padding-right:13px;border-right:1px solid #182818;"&gt;
+      &lt;table cellpadding="0" cellspacing="4"&gt;&lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#58a868,#287838);color:#081408;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;"&gt;soc&lt;br&gt;&lt;span style="font-size:11px;"&gt;[X]&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#488858,#185828);color:#081408;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;"&gt;vel&lt;br&gt;&lt;span style="font-size:11px;"&gt;[X]&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#386848,#084818);color:#c0e0c8;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;"&gt;sig&lt;br&gt;&lt;span style="font-size:11px;"&gt;[X]&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#264830,#0e2010);color:#589868;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;"&gt;ego&lt;br&gt;&lt;span style="font-size:11px;"&gt;[X]&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#142818,#080e08);color:#387840;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;"&gt;hip&lt;br&gt;&lt;span style="font-size:11px;"&gt;[X]&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#080e08,#040604);color:#183018;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:6px 11px;font-weight:bold;line-height:120%;"&gt;fis&lt;br&gt;&lt;span style="font-size:11px;"&gt;[X]&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;&lt;/table&gt;
+    &lt;/td&gt;
+    &lt;td style="padding-left:13px;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#386838;text-transform:uppercase;line-height:190%;"&gt;
+        &lt;span style="color:#c0e0c8;"&gt;nome&lt;/span&gt; — [NOME SOBRENOME]&lt;br&gt;
+        &lt;span style="color:#c0e0c8;"&gt;clã&lt;/span&gt; — [CLÃ]&lt;br&gt;
+        &lt;span style="color:#c0e0c8;"&gt;idade&lt;/span&gt; — [IDADE] anos&lt;br&gt;
+        &lt;span style="color:#386838;font-style:italic;"&gt;[NATUREZA]&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('f03')">Copiar código</button>
+</div>
+
+<!-- F04 -->
+<div class="mc">
+<div class="ml">Ficha 04</div><div class="mn">Tags com degradê · 2 colunas · Tom grafite</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#101010;padding:13px 15px;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+<td style="width:44%;padding-right:12px;border-right:1px solid #202020;">
+  <table cellpadding="0" cellspacing="0"><tbody>
+    <tr><td style="padding-bottom:4px;"><span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;color:#101010;background:linear-gradient(to right,#909090,#585858);padding:2px 6px;margin-right:6px;">nome</span><span style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#c0c0c0;text-transform:uppercase;">Nome Sobrenome</span></td></tr>
+    <tr><td style="padding-bottom:4px;"><span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;color:#101010;background:linear-gradient(to right,#909090,#585858);padding:2px 6px;margin-right:6px;">clã</span><span style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#c0c0c0;text-transform:uppercase;">Clã XX</span></td></tr>
+    <tr><td style="padding-bottom:4px;"><span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;color:#101010;background:linear-gradient(to right,#909090,#585858);padding:2px 6px;margin-right:6px;">idade</span><span style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#c0c0c0;text-transform:uppercase;">XX anos</span></td></tr>
+    <tr><td><span style="border:1px solid #383838;color:#787878;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;padding:2px 6px;margin-right:6px;">natureza</span><span style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#505050;font-style:italic;">[NATUREZA]</span></td></tr>
+  </tbody></table>
+</td>
+<td style="padding-left:12px;">
+  <table cellpadding="0" cellspacing="3"><tbody><tr>
+    <td><div style="background:linear-gradient(135deg,#989898,#686868);color:#101010;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">soc<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#787878,#484848);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">vel<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#585858,#282828);color:#c0c0c0;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">sig<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#383838,#181818);color:#787878;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">ego<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#1e1e1e,#0e0e0e);color:#484848;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">hip<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#0c0c0c,#060606);color:#181818;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">fis<br>X</div></td>
+  </tr></tbody></table>
+</td>
+</tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="f04">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#101010;padding:13px 15px;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+    &lt;td style="width:44%;padding-right:12px;border-right:1px solid #202020;"&gt;
+      &lt;table cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;
+        &lt;tr&gt;&lt;td style="padding-bottom:4px;"&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;color:#101010;background:linear-gradient(to right,#909090,#585858);padding:2px 6px;margin-right:6px;"&gt;nome&lt;/span&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#c0c0c0;text-transform:uppercase;"&gt;[NOME SOBRENOME]&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td style="padding-bottom:4px;"&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;color:#101010;background:linear-gradient(to right,#909090,#585858);padding:2px 6px;margin-right:6px;"&gt;clã&lt;/span&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#c0c0c0;text-transform:uppercase;"&gt;[CLÃ]&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td style="padding-bottom:4px;"&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;color:#101010;background:linear-gradient(to right,#909090,#585858);padding:2px 6px;margin-right:6px;"&gt;idade&lt;/span&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#c0c0c0;text-transform:uppercase;"&gt;[IDADE] anos&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;span style="border:1px solid #383838;color:#787878;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;padding:2px 6px;margin-right:6px;"&gt;natureza&lt;/span&gt;&lt;span style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#505050;font-style:italic;"&gt;[NATUREZA]&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;&lt;/table&gt;
+    &lt;/td&gt;
+    &lt;td style="padding-left:12px;"&gt;
+      &lt;table cellpadding="0" cellspacing="3"&gt;&lt;tbody&gt;&lt;tr&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#989898,#686868);color:#101010;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;soc&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#787878,#484848);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;vel&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#585858,#282828);color:#c0c0c0;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;sig&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#383838,#181818);color:#787878;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;ego&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#1e1e1e,#0e0e0e);color:#484848;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;hip&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#0c0c0c,#060606);color:#181818;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;fis&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+      &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('f04')">Copiar código</button>
+</div>
+
+<!-- F05 -->
+<div class="mc">
+<div class="ml">Ficha 05</div><div class="mn">Atributos horizontal teal · Dados abaixo · Compacto</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#040e12;">
+  <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;"><tbody><tr>
+    <td style="background:linear-gradient(135deg,#48b8c8,#187888);color:#040e12;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;">soc X</td>
+    <td style="background:linear-gradient(135deg,#389ab0,#0a6070);color:#040e12;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;">vel X</td>
+    <td style="background:linear-gradient(135deg,#287890,#084858);color:#b0e0e8;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;">sig X</td>
+    <td style="background:linear-gradient(135deg,#184858,#082028);color:#48a0b0;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;">ego X</td>
+    <td style="background:linear-gradient(135deg,#0c2830,#040e14);color:#186878;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;">hip X</td>
+    <td style="background:linear-gradient(135deg,#060c10,#020608);color:#082028;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;">fis X</td>
+  </tr></tbody></table>
+  <div style="padding:8px 14px;font-family:'Segoe UI',sans-serif;font-size:7px;color:#185868;text-transform:uppercase;letter-spacing:1px;text-align:center;">Nome Sobrenome &nbsp;·&nbsp; Clã XX &nbsp;·&nbsp; XX anos &nbsp;·&nbsp; <i>[NATUREZA]</i></div>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="f05">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#040e12;"&gt;
+  &lt;table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;"&gt;&lt;tbody&gt;&lt;tr&gt;
+    &lt;td style="background:linear-gradient(135deg,#48b8c8,#187888);color:#040e12;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;"&gt;soc [X]&lt;/td&gt;
+    &lt;td style="background:linear-gradient(135deg,#389ab0,#0a6070);color:#040e12;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;"&gt;vel [X]&lt;/td&gt;
+    &lt;td style="background:linear-gradient(135deg,#287890,#084858);color:#b0e0e8;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;"&gt;sig [X]&lt;/td&gt;
+    &lt;td style="background:linear-gradient(135deg,#184858,#082028);color:#48a0b0;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;"&gt;ego [X]&lt;/td&gt;
+    &lt;td style="background:linear-gradient(135deg,#0c2830,#040e14);color:#186878;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;"&gt;hip [X]&lt;/td&gt;
+    &lt;td style="background:linear-gradient(135deg,#060c10,#020608);color:#082028;font-family:'Segoe UI',sans-serif;font-size:7px;text-transform:uppercase;text-align:center;padding:8px 0;font-weight:bold;width:16.6%;"&gt;fis [X]&lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+  &lt;div style="padding:8px 14px;font-family:'Segoe UI',sans-serif;font-size:7px;color:#185868;text-transform:uppercase;letter-spacing:1px;text-align:center;"&gt;[NOME SOBRENOME] &amp;nbsp;·&amp;nbsp; [CLÃ] &amp;nbsp;·&amp;nbsp; [IDADE] anos &amp;nbsp;·&amp;nbsp; &lt;i&gt;[NATUREZA]&lt;/i&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('f05')">Copiar código</button>
+</div>
+
+<!-- F06 -->
+<div class="mc">
+<div class="ml">Ficha 06</div><div class="mn">Foto + dados + atributos · Degradê vinho · 3 colunas</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#100808;padding:12px 14px;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+<td style="width:66px;padding-right:12px;border-right:1px solid #201010;">
+  <img src="//placehold.co/52x52/180808/481018?text=XX" style="width:52px;height:52px;border:1px solid #381018;display:block;"/>
+</td>
+<td style="width:36%;padding:0 12px;border-right:1px solid #201010;font-family:'Segoe UI',sans-serif;font-size:8px;color:#583040;text-transform:uppercase;line-height:180%;"><span style="color:#e0c0c8;">nome</span> — Nome Sobrenome<br><span style="color:#e0c0c8;">clã</span> — Clã XX<br><span style="color:#e0c0c8;">idade</span> — XX &nbsp;·&nbsp; <span style="color:#e0c0c8;">ocup.</span> — Ocupação</td>
+<td style="padding-left:12px;">
+  <table cellpadding="0" cellspacing="3"><tbody><tr>
+    <td><div style="background:linear-gradient(135deg,#884058,#581028);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">soc<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#683040,#381018);color:#e0c0c8;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">vel<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#482028,#200810);color:#987080;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">sig<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#280e18,#120608);color:#583040;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">ego<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#140608,#080304);color:#281018;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">hip<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#080304,#040202);color:#140810;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">fis<br>X</div></td>
+  </tr></tbody></table>
+</td>
+</tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="f06">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#100808;padding:12px 14px;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+    &lt;td style="width:66px;padding-right:12px;border-right:1px solid #201010;"&gt;
+      &lt;img src="[URL DA IMAGEM]" style="width:52px;height:52px;border:1px solid #381018;display:block;"/&gt;
+    &lt;/td&gt;
+    &lt;td style="width:36%;padding:0 12px;border-right:1px solid #201010;font-family:'Segoe UI',sans-serif;font-size:8px;color:#583040;text-transform:uppercase;line-height:180%;"&gt;
+      &lt;span style="color:#e0c0c8;"&gt;nome&lt;/span&gt; — [NOME SOBRENOME]&lt;br&gt;
+      &lt;span style="color:#e0c0c8;"&gt;clã&lt;/span&gt; — [CLÃ]&lt;br&gt;
+      &lt;span style="color:#e0c0c8;"&gt;idade&lt;/span&gt; — [IDADE] &amp;nbsp;·&amp;nbsp; &lt;span style="color:#e0c0c8;"&gt;ocup.&lt;/span&gt; — [OCUPAÇÃO]
+    &lt;/td&gt;
+    &lt;td style="padding-left:12px;"&gt;
+      &lt;table cellpadding="0" cellspacing="3"&gt;&lt;tbody&gt;&lt;tr&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#884058,#581028);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;soc&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#683040,#381018);color:#e0c0c8;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;vel&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#482028,#200810);color:#987080;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;sig&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#280e18,#120608);color:#583040;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;ego&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#140608,#080304);color:#281018;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;hip&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#080304,#040202);color:#140810;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;fis&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+      &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('f06')">Copiar código</button>
+</div>
+
+<!-- F07 -->
+<div class="mc">
+<div class="ml">Ficha 07</div><div class="mn">Atributos verticais empilhados · Dados direita · Indigo</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#0a0c18;padding:12px 14px;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+<td style="width:auto;padding-right:12px;border-right:1px solid #181c2e;">
+  <table cellpadding="0" cellspacing="2"><tbody>
+    <tr><td><div style="background:linear-gradient(to right,#6870b8,#3840888);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;margin-bottom:1px;">soc &nbsp; X</div></td></tr>
+    <tr><td><div style="background:linear-gradient(to right,#5860a0,#283070);color:#e0e0f8;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;margin-bottom:1px;">vel &nbsp; X</div></td></tr>
+    <tr><td><div style="background:linear-gradient(to right,#484880,#182058);color:#c0c0e8;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;margin-bottom:1px;">sig &nbsp; X</div></td></tr>
+    <tr><td><div style="background:linear-gradient(to right,#2c3060,#0c1040);color:#8080c0;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;margin-bottom:1px;">ego &nbsp; X</div></td></tr>
+    <tr><td><div style="background:linear-gradient(to right,#181c30,#080c20);color:#484880;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;margin-bottom:1px;">hip &nbsp; X</div></td></tr>
+    <tr><td><div style="background:linear-gradient(to right,#0a0c18,#060810);color:#1c2030;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;">fis &nbsp; X</div></td></tr>
+  </tbody></table>
+</td>
+<td style="padding-left:14px;vertical-align:middle;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:8.5px;color:#383860;text-transform:uppercase;line-height:190%;"><span style="color:#c0c0e8;">nome</span> — Nome Sobrenome<br><span style="color:#c0c0e8;">clã</span> — Clã XX<br><span style="color:#c0c0e8;">idade</span> — XX anos<br><span style="color:#c0c0e8;">ocup.</span> — Ocupação<br><i style="color:#282848;">[NATUREZA]</i></div>
+</td>
+</tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="f07">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#0a0c18;padding:12px 14px;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+    &lt;td style="width:auto;padding-right:12px;border-right:1px solid #181c2e;"&gt;
+      &lt;table cellpadding="0" cellspacing="2"&gt;&lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;div style="background:linear-gradient(to right,#6870b8,#384088);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;"&gt;soc &amp;nbsp; [X]&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;div style="background:linear-gradient(to right,#5860a0,#283070);color:#e0e0f8;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;"&gt;vel &amp;nbsp; [X]&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;div style="background:linear-gradient(to right,#484880,#182058);color:#c0c0e8;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;"&gt;sig &amp;nbsp; [X]&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;div style="background:linear-gradient(to right,#2c3060,#0c1040);color:#8080c0;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;"&gt;ego &amp;nbsp; [X]&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;div style="background:linear-gradient(to right,#181c30,#080c20);color:#484880;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;"&gt;hip &amp;nbsp; [X]&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;div style="background:linear-gradient(to right,#0a0c18,#060810);color:#1c2030;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;padding:3px 10px;font-weight:bold;"&gt;fis &amp;nbsp; [X]&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;&lt;/table&gt;
+    &lt;/td&gt;
+    &lt;td style="padding-left:14px;vertical-align:middle;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:8.5px;color:#383860;text-transform:uppercase;line-height:190%;"&gt;
+        &lt;span style="color:#c0c0e8;"&gt;nome&lt;/span&gt; — [NOME SOBRENOME]&lt;br&gt;
+        &lt;span style="color:#c0c0e8;"&gt;clã&lt;/span&gt; — [CLÃ]&lt;br&gt;
+        &lt;span style="color:#c0c0e8;"&gt;idade&lt;/span&gt; — [IDADE] anos&lt;br&gt;
+        &lt;span style="color:#c0c0e8;"&gt;ocup.&lt;/span&gt; — [OCUPAÇÃO]&lt;br&gt;
+        &lt;i style="color:#282848;"&gt;[NATUREZA]&lt;/i&gt;
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('f07')">Copiar código</button>
+</div>
+
+<!-- F08 -->
+<div class="mc">
+<div class="ml">Ficha 08</div><div class="mn">Fundo creme · Atributos escuros · Borda superior colorida</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#ece8e0;padding:12px 15px;border-top:2px solid #786040;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="top">
+<td style="width:44%;padding-right:12px;border-right:1px solid #d0c8b0;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#786040;border-bottom:1px solid #d0c8b0;padding-bottom:3px;margin-bottom:6px;">identidade</div>
+  <div style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#504030;text-transform:uppercase;line-height:170%;"><span style="color:#180e08;">nome</span> — Nome Sobrenome<br><span style="color:#180e08;">clã</span> — Clã XX<br><span style="color:#180e08;">idade</span> — XX anos<br><span style="color:#180e08;">ocup.</span> — Ocupação</div>
+</td>
+<td style="padding-left:12px;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#786040;border-bottom:1px solid #d0c8b0;padding-bottom:3px;margin-bottom:6px;">atributos</div>
+  <table cellpadding="0" cellspacing="3"><tbody><tr>
+    <td><div style="background:linear-gradient(135deg,#484030,#282018);color:#ece8e0;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">soc<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#383028,#201808);color:#d8d0a8;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">vel<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#282018,#100c04);color:#a89868;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">sig<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#181408,#0c0804);color:#686040;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">ego<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#0c0a06,#060402);color:#382e18;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">hip<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#060402,#030201);color:#181208;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;">fis<br>X</div></td>
+  </tr></tbody></table>
+</td>
+</tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="f08">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#ece8e0;padding:12px 15px;border-top:2px solid #786040;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="top"&gt;
+    &lt;td style="width:44%;padding-right:12px;border-right:1px solid #d0c8b0;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#786040;border-bottom:1px solid #d0c8b0;padding-bottom:3px;margin-bottom:6px;"&gt;identidade&lt;/div&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#504030;text-transform:uppercase;line-height:170%;"&gt;
+        &lt;span style="color:#180e08;"&gt;nome&lt;/span&gt; — [NOME SOBRENOME]&lt;br&gt;
+        &lt;span style="color:#180e08;"&gt;clã&lt;/span&gt; — [CLÃ]&lt;br&gt;
+        &lt;span style="color:#180e08;"&gt;idade&lt;/span&gt; — [IDADE] anos&lt;br&gt;
+        &lt;span style="color:#180e08;"&gt;ocup.&lt;/span&gt; — [OCUPAÇÃO]
+      &lt;/div&gt;
+    &lt;/td&gt;
+    &lt;td style="padding-left:12px;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#786040;border-bottom:1px solid #d0c8b0;padding-bottom:3px;margin-bottom:6px;"&gt;atributos&lt;/div&gt;
+      &lt;table cellpadding="0" cellspacing="3"&gt;&lt;tbody&gt;&lt;tr&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#484030,#282018);color:#ece8e0;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;soc&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#383028,#201808);color:#d8d0a8;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;vel&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#282018,#100c04);color:#a89868;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;sig&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#181408,#0c0804);color:#686040;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;ego&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#0c0a06,#060402);color:#382e18;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;hip&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#060402,#030201);color:#181208;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 8px;font-weight:bold;line-height:130%;"&gt;fis&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+      &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('f08')">Copiar código</button>
+</div>
+
+<!-- F09 -->
+<div class="mc">
+<div class="ml">Ficha 09</div><div class="mn">Compacto · Dados em linha única · Degradê multicolor</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#0c0a06;padding:9px 14px;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="middle">
+<td style="padding-right:10px;border-right:1px solid #1e1810;font-family:'Segoe UI',sans-serif;font-size:7px;color:#484028;text-transform:uppercase;white-space:nowrap;"><span style="color:#d8c898;">Nome Sobrenome</span><br>Clã · XX · Ocupação</td>
+<td style="padding-left:10px;">
+  <table cellpadding="0" cellspacing="2" style="width:100%;"><tbody><tr>
+    <td style="background:linear-gradient(135deg,#e07830,#a84808);color:#0c0a06;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;">soc<br>X</td>
+    <td style="background:linear-gradient(135deg,#48a858,#186828);color:#0c0a06;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;">vel<br>X</td>
+    <td style="background:linear-gradient(135deg,#4878c8,#184898);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;">sig<br>X</td>
+    <td style="background:linear-gradient(135deg,#9850a8,#601870);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;">ego<br>X</td>
+    <td style="background:linear-gradient(135deg,#382810,#180e04);color:#987848;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;">hip<br>X</td>
+    <td style="background:linear-gradient(135deg,#181008,#0c0804);color:#302010;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;">fis<br>X</td>
+  </tr></tbody></table>
+</td>
+</tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="f09">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#0c0a06;padding:9px 14px;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="middle"&gt;
+    &lt;td style="padding-right:10px;border-right:1px solid #1e1810;font-family:'Segoe UI',sans-serif;font-size:7px;color:#484028;text-transform:uppercase;white-space:nowrap;"&gt;
+      &lt;span style="color:#d8c898;"&gt;[NOME SOBRENOME]&lt;/span&gt;&lt;br&gt;
+      [CLÃ] &amp;nbsp;·&amp;nbsp; [IDADE] &amp;nbsp;·&amp;nbsp; [OCUPAÇÃO]
+    &lt;/td&gt;
+    &lt;td style="padding-left:10px;"&gt;
+      &lt;table cellpadding="0" cellspacing="2" style="width:100%;"&gt;&lt;tbody&gt;&lt;tr&gt;
+        &lt;td style="background:linear-gradient(135deg,#e07830,#a84808);color:#0c0a06;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;"&gt;soc&lt;br&gt;[X]&lt;/td&gt;
+        &lt;td style="background:linear-gradient(135deg,#48a858,#186828);color:#0c0a06;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;"&gt;vel&lt;br&gt;[X]&lt;/td&gt;
+        &lt;td style="background:linear-gradient(135deg,#4878c8,#184898);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;"&gt;sig&lt;br&gt;[X]&lt;/td&gt;
+        &lt;td style="background:linear-gradient(135deg,#9850a8,#601870);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;"&gt;ego&lt;br&gt;[X]&lt;/td&gt;
+        &lt;td style="background:linear-gradient(135deg,#382810,#180e04);color:#987848;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;"&gt;hip&lt;br&gt;[X]&lt;/td&gt;
+        &lt;td style="background:linear-gradient(135deg,#181008,#0c0804);color:#302010;font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;text-align:center;padding:5px 3px;font-weight:bold;line-height:130%;width:16.6%;"&gt;fis&lt;br&gt;[X]&lt;/td&gt;
+      &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('f09')">Copiar código</button>
+</div>
+
+<!-- F10 -->
+<div class="mc">
+<div class="ml">Ficha 10</div><div class="mn">Creme rosado · Atributos terra · Com perfil texto</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#f0e8e4;padding:13px 15px;border-left:3px solid #886050;">
+<table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr valign="top">
+<td style="width:32%;padding-right:12px;border-right:1px solid #d8c8c0;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#886050;border-bottom:1px solid #d8c8c0;padding-bottom:3px;margin-bottom:6px;">identidade</div>
+  <div style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#503828;text-transform:uppercase;line-height:170%;"><span style="color:#180c08;">nome</span> — Nome Sobrenome<br><span style="color:#180c08;">clã</span> — Clã XX<br><span style="color:#180c08;">idade</span> — XX anos</div>
+</td>
+<td style="width:34%;padding:0 12px;border-right:1px solid #d8c8c0;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#886050;border-bottom:1px solid #d8c8c0;padding-bottom:3px;margin-bottom:6px;">atributos</div>
+  <table cellpadding="0" cellspacing="3"><tbody><tr>
+    <td><div style="background:linear-gradient(135deg,#c87048,#904028);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">soc<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#a85838,#703018);color:#f0d8c8;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">vel<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#884028,#501808);color:#e0b898;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">sig<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#582810,#301004);color:#b08060;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">ego<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#301008,#180804);color:#704830;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">hip<br>X</div></td>
+    <td><div style="background:linear-gradient(135deg,#180604,#0c0402);color:#301808;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;">fis<br>X</div></td>
+  </tr></tbody></table>
+</td>
+<td style="padding-left:12px;">
+  <div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#886050;border-bottom:1px solid #d8c8c0;padding-bottom:3px;margin-bottom:6px;">perfil</div>
+  <div style="font-family:Verdana,sans-serif;font-size:8px;color:#705040;line-height:160%;text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut labore et dolore.</div>
+</td>
+</tr></tbody></table>
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="f10">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#f0e8e4;padding:13px 15px;border-left:3px solid #886050;"&gt;
+  &lt;table style="width:100%;border-collapse:collapse;" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr valign="top"&gt;
+    &lt;td style="width:32%;padding-right:12px;border-right:1px solid #d8c8c0;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#886050;border-bottom:1px solid #d8c8c0;padding-bottom:3px;margin-bottom:6px;"&gt;identidade&lt;/div&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:8px;color:#503828;text-transform:uppercase;line-height:170%;"&gt;
+        &lt;span style="color:#180c08;"&gt;nome&lt;/span&gt; — [NOME SOBRENOME]&lt;br&gt;
+        &lt;span style="color:#180c08;"&gt;clã&lt;/span&gt; — [CLÃ]&lt;br&gt;
+        &lt;span style="color:#180c08;"&gt;idade&lt;/span&gt; — [IDADE] anos
+      &lt;/div&gt;
+    &lt;/td&gt;
+    &lt;td style="width:34%;padding:0 12px;border-right:1px solid #d8c8c0;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#886050;border-bottom:1px solid #d8c8c0;padding-bottom:3px;margin-bottom:6px;"&gt;atributos&lt;/div&gt;
+      &lt;table cellpadding="0" cellspacing="3"&gt;&lt;tbody&gt;&lt;tr&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#c87048,#904028);color:#fff;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;soc&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#a85838,#703018);color:#f0d8c8;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;vel&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#884028,#501808);color:#e0b898;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;sig&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#582810,#301004);color:#b08060;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;ego&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#301008,#180804);color:#704830;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;hip&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;div style="background:linear-gradient(135deg,#180604,#0c0402);color:#301808;font-family:'Segoe UI',sans-serif;font-size:6.5px;text-transform:uppercase;text-align:center;padding:4px 7px;font-weight:bold;line-height:130%;"&gt;fis&lt;br&gt;[X]&lt;/div&gt;&lt;/td&gt;
+      &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+    &lt;/td&gt;
+    &lt;td style="padding-left:12px;"&gt;
+      &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6px;text-transform:uppercase;letter-spacing:3px;color:#886050;border-bottom:1px solid #d8c8c0;padding-bottom:3px;margin-bottom:6px;"&gt;perfil&lt;/div&gt;
+      &lt;div style="font-family:Verdana,sans-serif;font-size:8px;color:#705040;line-height:160%;text-align:justify;"&gt;[PERFIL DO PERSONAGEM]&lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('f10')">Copiar código</button>
+</div>
+
+</div><!-- /fichas -->
+
+<!-- ═══════ TURNOS ═══════ -->
+<div id="turnos" class="section">
+<p class="section-intro">Blocos de texto para o corpo dos posts. Substitua o lorem ipsum pelo texto do personagem, e [PRIMEIRA LETRA] pela primeira letra do post.</p>
+
+<!-- T01 -->
+<div class="mc">
+<div class="ml">Turno 01</div><div class="mn">Creme quente · Drop cap dourado · Imagem direita · Fala degradê escuro</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#f4ede0;padding:14px 20px 16px;font-family:Verdana,sans-serif;font-size:11px;color:#201408;line-height:155%;text-align:justify;">
+<div style="float:right;margin-left:13px;margin-bottom:5px;"><img src="//placehold.co/78x78/1a1004/4a3010?text=XX" style="width:78px;height:78px;border:2px solid #786030;"/></div>
+<span style="font-family:'Palatino Linotype',serif;font-size:44px;font-weight:bold;color:#786030;float:left;line-height:.8;margin-right:5px;margin-top:3px;">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt non urna quis euismod.<br><br>
+<div style="margin:12px 0;background:linear-gradient(to right,#1e1408,#120e04);border-left:3px solid #d8a840;padding:10px 15px;"><div style="font-family:'Palatino Linotype',serif;font-size:11px;font-style:italic;color:#d8c898;line-height:160%;">"Lorem ipsum dolor sit amet, consectetur."</div></div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="t01">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#f4ede0;padding:14px 20px 16px;font-family:Verdana,sans-serif;font-size:11px;color:#201408;line-height:155%;text-align:justify;"&gt;
+  &lt;div style="float:right;margin-left:13px;margin-bottom:5px;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:78px;height:78px;border:2px solid #786030;"/&gt;
+  &lt;/div&gt;
+  &lt;span style="font-family:'Palatino Linotype',serif;font-size:44px;font-weight:bold;color:#786030;float:left;line-height:.8;margin-right:5px;margin-top:3px;"&gt;[PRIMEIRA LETRA]&lt;/span&gt;[TEXTO DO POST]&lt;br&gt;&lt;br&gt;
+  [MAIS TEXTO]&lt;br&gt;&lt;br&gt;
+  &lt;div style="margin:12px 0;background:linear-gradient(to right,#1e1408,#120e04);border-left:3px solid #d8a840;padding:10px 15px;"&gt;
+    &lt;div style="font-family:'Palatino Linotype',serif;font-size:11px;font-style:italic;color:#d8c898;line-height:160%;"&gt;"[FALA OU PENSAMENTO]"&lt;/div&gt;
+  &lt;/div&gt;
+  [TEXTO FINAL]
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('t01')">Copiar código</button>
+</div>
+
+<!-- T02 -->
+<div class="mc">
+<div class="ml">Turno 02</div><div class="mn">Fundo azul escuro · Imagem esquerda · Fala borda teal</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#060c14;padding:15px 20px;font-family:'Palatino Linotype',serif;font-size:13px;color:rgba(180,210,240,.6);line-height:1.9;text-align:justify;">
+<div style="float:left;margin-right:13px;margin-bottom:5px;"><img src="//placehold.co/78x78/040a10/182838?text=XX" style="width:78px;height:78px;border:1px solid #182838;"/></div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt non urna.<br><br>
+<div style="margin:12px 0;padding:9px 15px;border-left:2px solid #287880;background:rgba(40,120,128,.08);font-style:italic;color:rgba(160,200,220,.45);">"Lorem ipsum dolor sit amet, consectetur adipiscing."</div>
+Lorem ipsum dolor sit amet, consectetur.
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="t02">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#060c14;padding:15px 20px;font-family:'Palatino Linotype',serif;font-size:13px;color:rgba(180,210,240,.6);line-height:1.9;text-align:justify;"&gt;
+  &lt;div style="float:left;margin-right:13px;margin-bottom:5px;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:78px;height:78px;border:1px solid #182838;"/&gt;
+  &lt;/div&gt;
+  [TEXTO DO POST]&lt;br&gt;&lt;br&gt;
+  [MAIS TEXTO]&lt;br&gt;&lt;br&gt;
+  &lt;div style="margin:12px 0;padding:9px 15px;border-left:2px solid #287880;background:rgba(40,120,128,.08);font-style:italic;color:rgba(160,200,220,.45);"&gt;"[FALA OU PENSAMENTO]"&lt;/div&gt;
+  [TEXTO FINAL]
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('t02')">Copiar código</button>
+</div>
+
+<!-- T03 -->
+<div class="mc">
+<div class="ml">Turno 03</div><div class="mn">Branco quente · Fala sangrada · Sem imagem</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#faf6ee;padding:16px 22px;font-family:Georgia,serif;font-size:12px;color:#181008;line-height:1.85;text-align:justify;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing. Nunc tincidunt non urna quis.<br><br>
+<div style="margin:14px -22px;padding:12px 22px;background:#efe6d8;border-top:1px solid #c0a870;border-bottom:1px solid #c0a870;font-style:italic;color:#483820;font-size:11.5px;">"Lorem ipsum dolor sit amet, consectetur adipiscing magna."</div><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing.
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="t03">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#faf6ee;padding:16px 22px;font-family:Georgia,serif;font-size:12px;color:#181008;line-height:1.85;text-align:justify;"&gt;
+  [TEXTO DO POST]&lt;br&gt;&lt;br&gt;
+  [MAIS TEXTO]&lt;br&gt;&lt;br&gt;
+  &lt;div style="margin:14px -22px;padding:12px 22px;background:#efe6d8;border-top:1px solid #c0a870;border-bottom:1px solid #c0a870;font-style:italic;color:#483820;font-size:11.5px;"&gt;"[FALA OU PENSAMENTO]"&lt;/div&gt;&lt;br&gt;
+  [TEXTO FINAL]
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('t03')">Copiar código</button>
+</div>
+
+<!-- T04 -->
+<div class="mc">
+<div class="ml">Turno 04</div><div class="mn">Verde musgo · Drop cap · Imagem direita · Fala creme</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#eaece4;padding:14px 20px 16px;font-family:Verdana,sans-serif;font-size:11px;color:#141c10;line-height:155%;text-align:justify;">
+<div style="float:right;margin-left:13px;margin-bottom:5px;"><img src="//placehold.co/78x78/081408/284828?text=XX" style="width:78px;height:78px;border:2px solid #386840;"/></div>
+<span style="font-family:'Palatino Linotype',serif;font-size:44px;font-weight:bold;color:#386840;float:left;line-height:.8;margin-right:5px;margin-top:3px;">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing. Nunc tincidunt non urna quis euismod.<br><br>
+<div style="margin:12px 0;padding:10px 15px;border-left:3px solid #587850;background:rgba(88,120,80,.08);font-style:italic;font-family:'Palatino Linotype',serif;font-size:11px;color:#385830;line-height:160%;">"Lorem ipsum dolor sit amet, consectetur."</div>
+Lorem ipsum dolor sit amet, consectetur adipiscing.
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="t04">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#eaece4;padding:14px 20px 16px;font-family:Verdana,sans-serif;font-size:11px;color:#141c10;line-height:155%;text-align:justify;"&gt;
+  &lt;div style="float:right;margin-left:13px;margin-bottom:5px;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:78px;height:78px;border:2px solid #386840;"/&gt;
+  &lt;/div&gt;
+  &lt;span style="font-family:'Palatino Linotype',serif;font-size:44px;font-weight:bold;color:#386840;float:left;line-height:.8;margin-right:5px;margin-top:3px;"&gt;[PRIMEIRA LETRA]&lt;/span&gt;[TEXTO DO POST]&lt;br&gt;&lt;br&gt;
+  [MAIS TEXTO]&lt;br&gt;&lt;br&gt;
+  &lt;div style="margin:12px 0;padding:10px 15px;border-left:3px solid #587850;background:rgba(88,120,80,.08);font-style:italic;font-family:'Palatino Linotype',serif;font-size:11px;color:#385830;line-height:160%;"&gt;"[FALA OU PENSAMENTO]"&lt;/div&gt;
+  [TEXTO FINAL]
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('t04')">Copiar código</button>
+</div>
+
+<!-- T05 -->
+<div class="mc">
+<div class="ml">Turno 05</div><div class="mn">Escuro grafite · Serifado · Fala degradê indigo</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#0c0c10;padding:16px 20px;font-family:'Palatino Linotype',serif;font-size:13px;color:rgba(210,210,220,.58);line-height:1.9;text-align:justify;">
+<div style="float:left;margin-right:13px;margin-bottom:5px;"><img src="//placehold.co/78x78/080810/202030?text=XX" style="width:78px;height:78px;border:1px solid #202030;"/></div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing.<br><br>
+<div style="margin:12px 0;background:linear-gradient(to right,#181828,#0c0c18);border-left:3px solid #5858a0;padding:10px 15px;font-style:italic;color:rgba(180,180,210,.42);">"Lorem ipsum dolor sit amet, consectetur."</div>
+Lorem ipsum dolor sit amet, consectetur adipiscing.
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="t05">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#0c0c10;padding:16px 20px;font-family:'Palatino Linotype',serif;font-size:13px;color:rgba(210,210,220,.58);line-height:1.9;text-align:justify;"&gt;
+  &lt;div style="float:left;margin-right:13px;margin-bottom:5px;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:78px;height:78px;border:1px solid #202030;"/&gt;
+  &lt;/div&gt;
+  [TEXTO DO POST]&lt;br&gt;&lt;br&gt;
+  [MAIS TEXTO]&lt;br&gt;&lt;br&gt;
+  &lt;div style="margin:12px 0;background:linear-gradient(to right,#181828,#0c0c18);border-left:3px solid #5858a0;padding:10px 15px;font-style:italic;color:rgba(180,180,210,.42);"&gt;"[FALA OU PENSAMENTO]"&lt;/div&gt;
+  [TEXTO FINAL]
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('t05')">Copiar código</button>
+</div>
+
+<!-- T06 -->
+<div class="mc">
+<div class="ml">Turno 06</div><div class="mn">Azul-cinza claro · Sem imagem · Fala bloco escuro</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#e4e8ec;padding:15px 20px;font-family:Verdana,sans-serif;font-size:11px;color:#141820;line-height:155%;text-align:justify;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing. Nunc tincidunt non urna quis euismod.<br><br>
+<div style="margin:12px 0;background:#141820;padding:10px 15px;"><div style="font-family:'Palatino Linotype',serif;font-size:11px;font-style:italic;color:rgba(180,200,220,.5);line-height:160%;">"Lorem ipsum dolor sit amet, consectetur."</div></div>
+Lorem ipsum dolor sit amet, consectetur adipiscing.
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="t06">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#e4e8ec;padding:15px 20px;font-family:Verdana,sans-serif;font-size:11px;color:#141820;line-height:155%;text-align:justify;"&gt;
+  [TEXTO DO POST]&lt;br&gt;&lt;br&gt;
+  [MAIS TEXTO]&lt;br&gt;&lt;br&gt;
+  &lt;div style="margin:12px 0;background:#141820;padding:10px 15px;"&gt;
+    &lt;div style="font-family:'Palatino Linotype',serif;font-size:11px;font-style:italic;color:rgba(180,200,220,.5);line-height:160%;"&gt;"[FALA OU PENSAMENTO]"&lt;/div&gt;
+  &lt;/div&gt;
+  [TEXTO FINAL]
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('t06')">Copiar código</button>
+</div>
+
+<!-- T07 -->
+<div class="mc">
+<div class="ml">Turno 07</div><div class="mn">Escuro sépia · Drop cap grande · Fala centralizada com bordas</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#0e0a04;padding:16px 20px;font-family:'Palatino Linotype',serif;font-size:13px;color:rgba(230,215,190,.55);line-height:1.85;text-align:justify;">
+<div style="float:right;margin-left:13px;margin-bottom:5px;"><img src="//placehold.co/78x78/0c0802/302010?text=XX" style="width:78px;height:78px;border:2px solid #484018;"/></div>
+<span style="font-family:'Palatino Linotype',serif;font-size:50px;font-weight:bold;color:#c8a050;float:left;line-height:.75;margin-right:6px;margin-top:5px;">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing. Nunc tincidunt.<br><br>
+<div style="margin:14px 0;padding:12px 20px;text-align:center;border-top:1px solid rgba(200,160,80,.2);border-bottom:1px solid rgba(200,160,80,.2);font-style:italic;color:rgba(200,160,80,.48);font-size:12px;">"Lorem ipsum dolor sit amet, consectetur adipiscing."</div>
+Lorem ipsum dolor sit amet, consectetur adipiscing.
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="t07">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#0e0a04;padding:16px 20px;font-family:'Palatino Linotype',serif;font-size:13px;color:rgba(230,215,190,.55);line-height:1.85;text-align:justify;"&gt;
+  &lt;div style="float:right;margin-left:13px;margin-bottom:5px;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:78px;height:78px;border:2px solid #484018;"/&gt;
+  &lt;/div&gt;
+  &lt;span style="font-family:'Palatino Linotype',serif;font-size:50px;font-weight:bold;color:#c8a050;float:left;line-height:.75;margin-right:6px;margin-top:5px;"&gt;[PRIMEIRA LETRA]&lt;/span&gt;[TEXTO DO POST]&lt;br&gt;&lt;br&gt;
+  [MAIS TEXTO]&lt;br&gt;&lt;br&gt;
+  &lt;div style="margin:14px 0;padding:12px 20px;text-align:center;border-top:1px solid rgba(200,160,80,.2);border-bottom:1px solid rgba(200,160,80,.2);font-style:italic;color:rgba(200,160,80,.48);font-size:12px;"&gt;"[FALA OU PENSAMENTO]"&lt;/div&gt;
+  [TEXTO FINAL]
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('t07')">Copiar código</button>
+</div>
+
+<!-- T08 -->
+<div class="mc">
+<div class="ml">Turno 08</div><div class="mn">Creme rosado · Imagem esquerda · Fala escura bordô</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#f0e8e4;padding:15px 20px;font-family:Verdana,sans-serif;font-size:11px;color:#201010;line-height:155%;text-align:justify;">
+<div style="float:left;margin-right:13px;margin-bottom:5px;"><img src="//placehold.co/78x78/180808/483020?text=XX" style="width:78px;height:78px;border:2px solid #603020;"/></div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing. Nunc tincidunt non urna.<br><br>
+<div style="margin:12px 0;background:#180808;padding:10px 15px;border-left:3px solid #681820;"><div style="font-family:'Palatino Linotype',serif;font-size:11px;font-style:italic;color:#d0a0a0;line-height:160%;">"Lorem ipsum dolor sit amet, consectetur."</div></div>
+Lorem ipsum dolor sit amet, consectetur adipiscing.
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="t08">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#f0e8e4;padding:15px 20px;font-family:Verdana,sans-serif;font-size:11px;color:#201010;line-height:155%;text-align:justify;"&gt;
+  &lt;div style="float:left;margin-right:13px;margin-bottom:5px;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:78px;height:78px;border:2px solid #603020;"/&gt;
+  &lt;/div&gt;
+  [TEXTO DO POST]&lt;br&gt;&lt;br&gt;
+  [MAIS TEXTO]&lt;br&gt;&lt;br&gt;
+  &lt;div style="margin:12px 0;background:#180808;padding:10px 15px;border-left:3px solid #681820;"&gt;
+    &lt;div style="font-family:'Palatino Linotype',serif;font-size:11px;font-style:italic;color:#d0a0a0;line-height:160%;"&gt;"[FALA OU PENSAMENTO]"&lt;/div&gt;
+  &lt;/div&gt;
+  [TEXTO FINAL]
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('t08')">Copiar código</button>
+</div>
+
+<!-- T09 -->
+<div class="mc">
+<div class="ml">Turno 09</div><div class="mn">Verde escuro · Serifado · Fala borda laranja</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#060c08;padding:16px 20px;font-family:'Palatino Linotype',serif;font-size:13px;color:rgba(180,210,190,.55);line-height:1.9;text-align:justify;">
+<div style="float:right;margin-left:13px;margin-bottom:5px;"><img src="//placehold.co/78x78/040a06/183020?text=XX" style="width:78px;height:78px;border:1px solid #183020;"/></div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing. Nunc tincidunt non urna quis.<br><br>
+<div style="margin:12px 0;padding:10px 15px;border-left:2px solid #a06010;background:rgba(160,96,16,.07);font-style:italic;color:rgba(180,210,190,.35);">"Lorem ipsum dolor sit amet, consectetur."</div>
+Lorem ipsum dolor sit amet, consectetur.
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="t09">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#060c08;padding:16px 20px;font-family:'Palatino Linotype',serif;font-size:13px;color:rgba(180,210,190,.55);line-height:1.9;text-align:justify;"&gt;
+  &lt;div style="float:right;margin-left:13px;margin-bottom:5px;"&gt;
+    &lt;img src="[URL DA IMAGEM]" style="width:78px;height:78px;border:1px solid #183020;"/&gt;
+  &lt;/div&gt;
+  [TEXTO DO POST]&lt;br&gt;&lt;br&gt;
+  [MAIS TEXTO]&lt;br&gt;&lt;br&gt;
+  &lt;div style="margin:12px 0;padding:10px 15px;border-left:2px solid #a06010;background:rgba(160,96,16,.07);font-style:italic;color:rgba(180,210,190,.35);"&gt;"[FALA OU PENSAMENTO]"&lt;/div&gt;
+  [TEXTO FINAL]
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('t09')">Copiar código</button>
+</div>
+
+<!-- T10 -->
+<div class="mc">
+<div class="ml">Turno 10</div><div class="mn">Off-white neutro · Imagem com borda dupla · Drop cap grafite</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#f4f2ee;padding:15px 20px;font-family:Georgia,serif;font-size:12px;color:#141210;line-height:1.85;text-align:justify;">
+<div style="float:left;margin-right:13px;margin-bottom:5px;"><div style="border:2px solid #484440;padding:2px;display:inline-block;"><img src="//placehold.co/74x74/141210/383430?text=XX" style="width:74px;height:74px;display:block;"/></div></div>
+<span style="font-family:'Palatino Linotype',serif;font-size:44px;font-weight:bold;color:#484440;float:left;line-height:.8;margin-right:5px;margin-top:3px;">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt non urna.<br><br>
+<div style="margin:12px 0;padding:10px 15px;border-left:3px solid #686460;background:#eceae4;font-style:italic;font-family:'Palatino Linotype',serif;font-size:11.5px;color:#484440;line-height:160%;">"Lorem ipsum dolor sit amet, consectetur adipiscing."</div>
+Lorem ipsum dolor sit amet, consectetur adipiscing.
+</div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="t10">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#f4f2ee;padding:15px 20px;font-family:Georgia,serif;font-size:12px;color:#141210;line-height:1.85;text-align:justify;"&gt;
+  &lt;div style="float:left;margin-right:13px;margin-bottom:5px;"&gt;
+    &lt;div style="border:2px solid #484440;padding:2px;display:inline-block;"&gt;
+      &lt;img src="[URL DA IMAGEM]" style="width:74px;height:74px;display:block;"/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span style="font-family:'Palatino Linotype',serif;font-size:44px;font-weight:bold;color:#484440;float:left;line-height:.8;margin-right:5px;margin-top:3px;"&gt;[PRIMEIRA LETRA]&lt;/span&gt;[TEXTO DO POST]&lt;br&gt;&lt;br&gt;
+  [MAIS TEXTO]&lt;br&gt;&lt;br&gt;
+  &lt;div style="margin:12px 0;padding:10px 15px;border-left:3px solid #686460;background:#eceae4;font-style:italic;font-family:'Palatino Linotype',serif;font-size:11.5px;color:#484440;line-height:160%;"&gt;"[FALA OU PENSAMENTO]"&lt;/div&gt;
+  [TEXTO FINAL]
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('t10')">Copiar código</button>
+</div>
+
+</div><!-- /turnos -->
+
+<!-- ═══════ RODAPÉS ═══════ -->
+<div id="rodapes" class="section">
+<p class="section-intro">Rodapés para fechar o post. Troque [PLAYER] pelo nome do jogador.</p>
+
+<!-- R01 -->
+<div class="mc">
+<div class="ml">Rodapé 01</div><div class="mn">Azul naval · Linha degradê teal embaixo · Direita</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#0a1420;padding:9px 20px;text-align:right;"><div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#182838;text-transform:uppercase;letter-spacing:2px;">played by <b style="color:#b0c8d8;">player</b></div></div>
+<div style="height:2px;background:linear-gradient(to right,#0a1420,#3a8aaa,#0a1420);"></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="r01">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#0a1420;padding:9px 20px;text-align:right;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#182838;text-transform:uppercase;letter-spacing:2px;"&gt;played by &lt;b style="color:#b0c8d8;"&gt;[PLAYER]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style="height:2px;background:linear-gradient(to right,#0a1420,#3a8aaa,#0a1420);"&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('r01')">Copiar código</button>
+</div>
+
+<!-- R02 -->
+<div class="mc">
+<div class="ml">Rodapé 02</div><div class="mn">Degradê dourado · Esquerda · Linha topo</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="height:1px;background:linear-gradient(to right,transparent,#c8a838,transparent);"></div>
+<div style="background:linear-gradient(to right,#0e0c02,#181402,#0e0c02);padding:9px 20px;text-align:left;"><div style="font-family:'Montserrat',sans-serif;font-size:6.5px;color:#382e08;text-transform:uppercase;letter-spacing:3px;">played by <b style="color:#e8d498;">player</b></div></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="r02">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="height:1px;background:linear-gradient(to right,transparent,#c8a838,transparent);"&gt;&lt;/div&gt;
+&lt;div style="background:linear-gradient(to right,#0e0c02,#181402,#0e0c02);padding:9px 20px;text-align:left;"&gt;
+  &lt;div style="font-family:'Montserrat',sans-serif;font-size:6.5px;color:#382e08;text-transform:uppercase;letter-spacing:3px;"&gt;played by &lt;b style="color:#e8d498;"&gt;[PLAYER]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('r02')">Copiar código</button>
+</div>
+
+<!-- R03 -->
+<div class="mc">
+<div class="ml">Rodapé 03</div><div class="mn">Creme · Linha superior · Centralizado</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#f0ece4;border-top:1px solid #c0b890;padding:10px 20px;text-align:center;"><div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#706040;text-transform:uppercase;letter-spacing:3px;">played by <b style="color:#181008;">player</b></div></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="r03">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#f0ece4;border-top:1px solid #c0b890;padding:10px 20px;text-align:center;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#706040;text-transform:uppercase;letter-spacing:3px;"&gt;played by &lt;b style="color:#181008;"&gt;[PLAYER]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('r03')">Copiar código</button>
+</div>
+
+<!-- R04 -->
+<div class="mc">
+<div class="ml">Rodapé 04</div><div class="mn">Verde escuro · Linha teal topo · Direita</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="height:2px;background:linear-gradient(to right,#040c06,#388858,#040c06);"></div>
+<div style="background:#040c06;padding:9px 20px;text-align:right;"><div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#183820;text-transform:uppercase;letter-spacing:2px;">played by <b style="color:#b0d8b8;">player</b></div></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="r04">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="height:2px;background:linear-gradient(to right,#040c06,#388858,#040c06);"&gt;&lt;/div&gt;
+&lt;div style="background:#040c06;padding:9px 20px;text-align:right;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#183820;text-transform:uppercase;letter-spacing:2px;"&gt;played by &lt;b style="color:#b0d8b8;"&gt;[PLAYER]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('r04')">Copiar código</button>
+</div>
+
+<!-- R05 -->
+<div class="mc">
+<div class="ml">Rodapé 05</div><div class="mn">Grafite · Linha cinza · Esquerda</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="height:1px;background:linear-gradient(to right,transparent,#686868,transparent);"></div>
+<div style="background:#0e0e0e;padding:9px 20px;text-align:left;"><div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#282828;text-transform:uppercase;letter-spacing:2px;">played by <b style="color:#c0c0c0;">player</b></div></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="r05">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="height:1px;background:linear-gradient(to right,transparent,#686868,transparent);"&gt;&lt;/div&gt;
+&lt;div style="background:#0e0e0e;padding:9px 20px;text-align:left;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#282828;text-transform:uppercase;letter-spacing:2px;"&gt;played by &lt;b style="color:#c0c0c0;"&gt;[PLAYER]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('r05')">Copiar código</button>
+</div>
+
+<!-- R06 -->
+<div class="mc">
+<div class="ml">Rodapé 06</div><div class="mn">Vinho · Degradê horizontal · Centralizado</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="height:1px;background:linear-gradient(to right,transparent,#881828,transparent);"></div>
+<div style="background:linear-gradient(to right,#100408,#1c0810,#100408);padding:9px 20px;text-align:center;"><div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#381018;text-transform:uppercase;letter-spacing:2px;">played by <b style="color:#f0c8c8;">player</b></div></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="r06">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="height:1px;background:linear-gradient(to right,transparent,#881828,transparent);"&gt;&lt;/div&gt;
+&lt;div style="background:linear-gradient(to right,#100408,#1c0810,#100408);padding:9px 20px;text-align:center;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#381018;text-transform:uppercase;letter-spacing:2px;"&gt;played by &lt;b style="color:#f0c8c8;"&gt;[PLAYER]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('r06')">Copiar código</button>
+</div>
+
+<!-- R07 -->
+<div class="mc">
+<div class="ml">Rodapé 07</div><div class="mn">Creme rosado · Borda topo · Direita</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="background:#ece4e0;border-top:2px solid #886050;padding:9px 20px;text-align:right;"><div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#705040;text-transform:uppercase;letter-spacing:2px;">played by <b style="color:#180c08;">player</b></div></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="r07">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="background:#ece4e0;border-top:2px solid #886050;padding:9px 20px;text-align:right;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#705040;text-transform:uppercase;letter-spacing:2px;"&gt;played by &lt;b style="color:#180c08;"&gt;[PLAYER]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('r07')">Copiar código</button>
+</div>
+
+<!-- R08 -->
+<div class="mc">
+<div class="ml">Rodapé 08</div><div class="mn">Indigo · Linha degradê topo · Esquerda</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="height:2px;background:linear-gradient(to right,#08081a,#5858a8,#08081a);"></div>
+<div style="background:#08081a;padding:9px 20px;text-align:left;"><div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#181828;text-transform:uppercase;letter-spacing:2px;">played by <b style="color:#c0c0e8;">player</b></div></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="r08">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="height:2px;background:linear-gradient(to right,#08081a,#5858a8,#08081a);"&gt;&lt;/div&gt;
+&lt;div style="background:#08081a;padding:9px 20px;text-align:left;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#181828;text-transform:uppercase;letter-spacing:2px;"&gt;played by &lt;b style="color:#c0c0e8;"&gt;[PLAYER]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('r08')">Copiar código</button>
+</div>
+
+<!-- R09 -->
+<div class="mc">
+<div class="ml">Rodapé 09</div><div class="mn">Terra queimada · Linha laranja · Centralizado</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="height:1px;background:linear-gradient(to right,transparent,#c06010,transparent);"></div>
+<div style="background:#100a04;padding:9px 20px;text-align:center;"><div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#382008;text-transform:uppercase;letter-spacing:2px;">played by <b style="color:#e8c898;">player</b></div></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="r09">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="height:1px;background:linear-gradient(to right,transparent,#c06010,transparent);"&gt;&lt;/div&gt;
+&lt;div style="background:#100a04;padding:9px 20px;text-align:center;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#382008;text-transform:uppercase;letter-spacing:2px;"&gt;played by &lt;b style="color:#e8c898;"&gt;[PLAYER]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('r09')">Copiar código</button>
+</div>
+
+<!-- R10 -->
+<div class="mc">
+<div class="ml">Rodapé 10</div><div class="mn">Slate · Linha multicolor · Direita</div>
+<div class="prev"><center><div style="width:80%;">
+<div style="height:3px;background:linear-gradient(to right,#0c1018,#3a6898,#3a8858,#0c1018);"></div>
+<div style="background:#0c1018;padding:9px 20px;text-align:right;"><div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#1c2838;text-transform:uppercase;letter-spacing:2px;">played by <b style="color:#c8d8e8;">player</b></div></div>
+</div></center></div>
+<div class="cl">↓ Copie o código</div>
+<div class="code" id="r10">&lt;center&gt;&lt;div style="width:80%;"&gt;
+&lt;div style="height:3px;background:linear-gradient(to right,#0c1018,#3a6898,#3a8858,#0c1018);"&gt;&lt;/div&gt;
+&lt;div style="background:#0c1018;padding:9px 20px;text-align:right;"&gt;
+  &lt;div style="font-family:'Segoe UI',sans-serif;font-size:6.5px;color:#1c2838;text-transform:uppercase;letter-spacing:2px;"&gt;played by &lt;b style="color:#c8d8e8;"&gt;[PLAYER]&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/center&gt;</div>
+<button class="cbtn" onclick="cp('r10')">Copiar código</button>
+</div>
+
+</div><!-- /rodapes -->
+
+<footer>
+  <div class="foot-logo">La <em>Cour</em></div>
+  <div class="foot-meta">Paris · 1932</div>
+</footer>
+
+<script>
+function show(id,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  el.classList.add('on');
+}
+function cp(id){
+  const el=document.getElementById(id);
+  navigator.clipboard.writeText(el.innerText).then(()=>{
+    const btn=el.nextElementSibling;
+    btn.textContent='Copiado!';
+    setTimeout(()=>btn.textContent='Copiar código',2000);
+  });
+}
+</script>
+</body>
+</html>
